@@ -32,6 +32,8 @@
   --color-brand-gray-mid: var(--brand-gray-mid);
   --color-brand-gray-light: var(--brand-gray-light);
   --color-brand-gray-warm: var(--brand-gray-warm);
+
+  --font-heading: var(--font-heading);
 }
 
 html {

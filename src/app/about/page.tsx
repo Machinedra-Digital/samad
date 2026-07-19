@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
-import { ShieldCheck, Truck, Scale, Anchor, Award, Users } from "lucide-react";
+import { ShieldCheck, Truck, Scale, Anchor } from "lucide-react";
 
 export const metadata = {
   title: "About Us | Arabian Samad Fertilizer Distribution UAE",

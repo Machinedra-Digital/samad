@@ -43,14 +43,14 @@ export default function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="bg-brand-green-mid p-2 rounded-lg flex items-center justify-center shadow-md shadow-brand-green-dark/20 group-hover:bg-brand-green-light transition-colors duration-300">
-                <Leaf className="w-5 h-5 text-white" />
+              <div className="bg-brand-green-mid/10 text-brand-green-light border border-brand-green-light/25 p-2 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-brand-green-mid group-hover:text-white shadow-sm">
+                <Leaf className="w-5 h-5" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-wider text-white uppercase font-sans">
+                <span className="text-xl font-extrabold tracking-wider text-white uppercase font-heading">
                   Arabian Samad
                 </span>
-                <span className="text-[10px] uppercase tracking-widest text-brand-green-light font-medium -mt-1">
+                <span className="text-[10px] uppercase tracking-widest text-brand-green-light font-semibold -mt-1">
                   Fertilizers & Logistics
                 </span>
               </div>
@@ -64,7 +64,7 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`text-sm font-medium tracking-wide transition-colors duration-200 relative py-1 ${
+                    className={`text-sm font-semibold tracking-wide transition-colors duration-200 relative py-1 font-heading ${
                       isActive ? "text-brand-green-light" : "text-brand-gray-warm hover:text-white"
                     }`}
                   >
@@ -72,7 +72,7 @@ export default function Header() {
                     {isActive && (
                       <motion.span
                         layoutId="activeNavBorder"
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-green-light"
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-green-light rounded-full"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
@@ -85,10 +85,12 @@ export default function Header() {
             <div className="hidden md:block">
               <Link
                 href="/contact/"
-                className="inline-flex items-center justify-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-brand-green-mid hover:bg-brand-green-light rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group"
+                className="inline-flex items-center justify-center pl-5 pr-2.5 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-brand-green-mid hover:bg-brand-green-light rounded-full shadow-md hover:shadow-brand-green-mid/20 transition-all duration-300 group gap-3"
               >
-                Request Quote
-                <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                Contact Us
+                <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-brand-green-mid transition-all duration-300 group-hover:rotate-45 group-hover:bg-brand-blue-dark group-hover:text-white">
+                  <ArrowUpRight className="w-3 h-3" />
+                </span>
               </Link>
             </div>
 
@@ -136,10 +138,12 @@ export default function Header() {
               <Link
                 href="/contact/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full inline-flex items-center justify-center px-5 py-3 text-sm font-semibold uppercase tracking-wider text-white bg-brand-green-mid hover:bg-brand-green-light rounded-lg transition-colors duration-300"
+                className="w-full inline-flex items-center justify-center py-4 text-sm font-bold uppercase tracking-wider text-white bg-brand-green-mid hover:bg-brand-green-light rounded-full transition-colors duration-300 group gap-3"
               >
-                Request Quote
-                <ArrowUpRight className="w-4 h-4 ml-2" />
+                Contact Us
+                <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-green-mid transition-transform duration-300 group-hover:rotate-45">
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </span>
               </Link>
             </div>
           </motion.div>

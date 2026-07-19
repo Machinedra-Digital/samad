@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Play, Shield, Globe, Award, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -52,106 +52,152 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-blue-light/10 rounded-full blur-[150px] pointer-events-none z-10" />
 
       {/* Hero Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 z-20 text-center flex flex-col items-center">
-        
-        {/* Floating Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-blue-mid/60 backdrop-blur-md border border-brand-blue-light/30 shadow-md mb-6"
-        >
-          <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green-light opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-green-light"></span>
-          </span>
-          <span className="text-xs font-semibold uppercase tracking-wider text-brand-gray-light">
-            UAE Base • Global Reach to Asia & Africa
-          </span>
-        </motion.div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 z-20 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* Left Column: Text Content */}
+          <div className="lg:col-span-7 text-left space-y-6 flex flex-col items-start">
+            
+            {/* Floating Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-blue-mid/60 backdrop-blur-md border border-brand-blue-light/30 shadow-md"
+            >
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green-light opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-green-light"></span>
+              </span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-brand-gray-light">
+                UAE Base • Global Reach to Asia & Africa
+              </span>
+            </motion.div>
 
-        {/* Headline */}
-        <motion.div
-          role="heading"
-          aria-level={1}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl leading-tight sm:leading-none"
-        >
-          Empowering Global Agriculture with High-Performance{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green-light to-brand-green-mid">
-            Urea N46%
-          </span>
-        </motion.div>
+            {/* Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight font-heading"
+            >
+              Empowering Global Agriculture with High-Performance{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-green-light to-brand-green-mid block lg:inline">
+                Urea N46%
+              </span>
+            </motion.h1>
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-6 text-lg sm:text-xl text-brand-gray-warm max-w-2xl leading-relaxed"
-        >
-          Arabian Samad is a premier fertilizer trading and logistics partner based in the UAE. We distribute prilled and granular Urea N46% in custom packaging configurations to support robust food production systems globally.
-        </motion.p>
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-base sm:text-lg text-brand-gray-warm max-w-2xl leading-relaxed font-sans"
+            >
+              Arabian Samad is a premier fertilizer trading and logistics partner based in the UAE. We distribute prilled and granular Urea N46% in custom packaging configurations to support robust food production systems globally.
+            </motion.p>
 
-        {/* Action Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-10 flex flex-col sm:flex-row items-center gap-4"
-        >
-          <Link
-            href="/contact/"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white bg-brand-green-mid hover:bg-brand-green-light rounded-xl shadow-lg hover:shadow-brand-green-mid/20 transition-all duration-300 group"
-          >
-            Get a B2B Quote
-            <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-          <Link
-            href="/products/"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white bg-brand-blue-mid/45 hover:bg-brand-blue-mid/70 border border-brand-blue-light/40 rounded-xl transition-all duration-300"
-          >
-            View Specifications
-          </Link>
-        </motion.div>
+            {/* Action Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+            >
+              <Link
+                href="/contact/"
+                className="w-full sm:w-auto inline-flex items-center justify-between pl-6 pr-3 py-3.5 text-sm font-bold uppercase tracking-wider text-white bg-brand-green-mid hover:bg-brand-green-light rounded-full shadow-lg hover:shadow-brand-green-mid/20 transition-all duration-300 group gap-4"
+              >
+                <span>Contact Us</span>
+                <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-green-mid transition-all duration-300 group-hover:rotate-45 group-hover:bg-brand-blue-dark group-hover:text-white">
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </Link>
+              <Link
+                href="/products/"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white bg-brand-blue-mid/45 hover:bg-brand-blue-mid/70 border border-brand-blue-light/40 rounded-full transition-all duration-300"
+              >
+                Specifications
+              </Link>
+            </motion.div>
 
-        {/* Features badges bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.9 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl w-full border-t border-brand-blue-mid/30 pt-10"
-        >
-          <div className="flex items-center space-x-3 text-left">
-            <div className="p-2 bg-brand-blue-mid/40 rounded-lg text-brand-green-light border border-brand-blue-light/20">
-              <Award className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white">Prilled & Granular</h4>
-              <p className="text-xs text-brand-gray-mid">Dual-grade N46% supplies</p>
-            </div>
+            {/* Micro Stats Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex items-center gap-6 mt-4 p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-lg w-full sm:w-auto"
+            >
+              <div>
+                <div className="text-2xl font-extrabold text-brand-green-light font-heading">SGS Certified</div>
+                <div className="text-xs text-brand-gray-warm">100% Quality Inspected Cargo</div>
+              </div>
+              <div className="h-8 w-px bg-white/15" />
+              <div>
+                <div className="text-2xl font-extrabold text-brand-green-light font-heading">GCC Sourced</div>
+                <div className="text-xs text-brand-gray-warm">Standard ISO Compliance</div>
+              </div>
+            </motion.div>
           </div>
-          <div className="flex items-center space-x-3 text-left">
-            <div className="p-2 bg-brand-blue-mid/40 rounded-lg text-brand-green-light border border-brand-blue-light/20">
-              <Shield className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white">Custom Packaging</h4>
-              <p className="text-xs text-brand-gray-mid">Bulk, 50Kg, 1Mt Jumbo configurations</p>
-            </div>
+
+          {/* Right Column: Visual Collages / Cards Grid */}
+          <div className="lg:col-span-5 relative w-full h-[350px] sm:h-[400px] flex items-center justify-center lg:justify-end mt-8 lg:mt-0">
+            {/* Background Glow */}
+            <div className="absolute w-[250px] h-[250px] bg-brand-green-mid/20 rounded-full blur-[80px]" />
+
+            {/* Overlapping Bento/Collage Cards */}
+            {/* Card 1: Granular Urea Info Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 50, y: -20 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="absolute top-4 left-4 sm:left-10 w-[240px] p-6 rounded-2xl bg-brand-blue-dark/75 backdrop-blur-md border border-brand-blue-light/35 shadow-xl space-y-4 hover:-translate-y-1 transition-transform duration-300 group z-10"
+            >
+              <div className="flex justify-between items-start">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-green-light bg-brand-green-mid/10 px-2 py-0.5 rounded border border-brand-green-mid/20">
+                  Granular Grade
+                </span>
+                <span className="text-brand-gray-warm text-xs font-semibold">N46.0%</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white font-heading">Granular Urea</h3>
+                <p className="text-xs text-brand-gray-warm leading-relaxed mt-1">
+                  Delayed nitrogen release, excellent for warm climates and mechanical broadcasting.
+                </p>
+              </div>
+              <div className="flex items-center justify-between text-[10px] text-brand-green-light font-semibold pt-2 border-t border-white/10">
+                <span>Particle: 2.00 - 4.75mm</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </motion.div>
+
+            {/* Card 2: Prilled Urea Info Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 50, y: 50 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="absolute bottom-4 right-4 sm:right-10 w-[240px] p-6 rounded-2xl bg-brand-blue-mid/45 backdrop-blur-md border border-brand-blue-light/20 shadow-xl space-y-4 hover:-translate-y-1 transition-transform duration-300 group z-20"
+            >
+              <div className="flex justify-between items-start">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-brand-green-light bg-brand-green-mid/10 px-2 py-0.5 rounded border border-brand-green-mid/20">
+                  Prilled Grade
+                </span>
+                <span className="text-brand-gray-warm text-xs font-semibold">N46.0%</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white font-heading">Prilled Urea</h3>
+                <p className="text-xs text-brand-gray-warm leading-relaxed mt-1">
+                  Highly soluble sphere design, ideal for liquid fertilizer blends and fertigation.
+                </p>
+              </div>
+              <div className="flex items-center justify-between text-[10px] text-brand-green-light font-semibold pt-2 border-t border-white/10">
+                <span>Particle: 1.00 - 2.80mm</span>
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </motion.div>
           </div>
-          <div className="flex items-center space-x-3 text-left col-span-2 md:col-span-1 justify-center md:justify-start">
-            <div className="p-2 bg-brand-blue-mid/40 rounded-lg text-brand-green-light border border-brand-blue-light/20">
-              <Globe className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-semibold text-white">Logistical Hub</h4>
-              <p className="text-xs text-brand-gray-mid">Direct shipping from UAE ports</p>
-            </div>
-          </div>
-        </motion.div>
+
+        </div>
       </div>
 
       {/* Down Scroll Indicator */}
