@@ -33,7 +33,7 @@ export default function Hero() {
         >
           {/* Using the local hero video asset */}
           <source
-            src="/hero_video.mp4"
+            src="/samad/hero_video.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
