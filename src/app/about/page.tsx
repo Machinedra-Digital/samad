@@ -35,12 +35,12 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      
-      <main id="main-content" className="flex-grow pt-24 font-sans bg-brand-gray-light">
+
+      <main id="main-content" className="flex-grow pt-18 font-sans bg-brand-gray-light">
         {/* Semantic SEO/GEO headings */}
         <h2 className="sr-only">UAE Corporate History & Trade Hub</h2>
         <h2 className="sr-only">Our Core Strengths & Supply Chain Operations</h2>
-        
+
         {/* Banner Section */}
         <section className="relative bg-brand-blue-dark py-20 text-white overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#0e3054_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10" />
@@ -58,7 +58,7 @@ export default function AboutPage() {
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              
+
               {/* Text column */}
               <div className="space-y-6">
                 <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-brand-green-mid/10 text-brand-green-mid border border-brand-green-mid/20 text-xs font-semibold uppercase tracking-wider">
@@ -73,7 +73,7 @@ export default function AboutPage() {
                 <p className="text-brand-gray-dark leading-relaxed">
                   Our core focus remains solving B2B shipping complexity. From packing 20 small 50kg bags neatly inside a 1-Metric-Ton jumbo bag for ease of forklift operation, to chartering bulk vessels, we ensure chemical integrity remains flawless from the manufacturing plant to the farm site.
                 </p>
-                
+
                 <div className="grid grid-cols-2 gap-6 pt-4 border-t border-brand-gray-warm">
                   <div>
                     <h4 className="text-2xl font-bold text-brand-green-mid">100K+ MT</h4>
@@ -93,7 +93,7 @@ export default function AboutPage() {
               {/* Graphic Mock Column */}
               <div className="relative bg-brand-blue-mid rounded-2xl p-8 text-white overflow-hidden shadow-xl border border-brand-blue-light/20 flex flex-col justify-between min-h-[400px]">
                 <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-brand-green-mid/20 rounded-full blur-[100px]" />
-                
+
                 <div>
                   <h3 className="text-xl font-bold tracking-wide">Our Mission</h3>
                   <p className="mt-3 text-sm text-brand-gray-warm leading-relaxed">

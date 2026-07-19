@@ -13,7 +13,7 @@ export default function ProductsPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="flex-grow pt-24 font-sans bg-brand-gray-light">
+      <main id="main-content" className="flex-grow pt-18 font-sans bg-brand-gray-light">
         {/* Semantic SEO/GEO headings */}
         <h1 className="sr-only">Arabian Samad - Products Catalog</h1>
         <h2 className="sr-only">Urea N46% Granular & Prilled Specifications</h2>

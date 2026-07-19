@@ -13,7 +13,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main id="main-content" className="flex-grow pt-24 font-sans bg-brand-gray-light">
+      <main id="main-content" className="flex-grow pt-18 font-sans bg-brand-gray-light">
         {/* Semantic SEO/GEO headings */}
         <h1 className="sr-only">Contact Arabian Samad</h1>
         <h2 className="sr-only">Request a B2B Quote (RFQ)</h2>
