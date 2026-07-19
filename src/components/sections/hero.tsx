@@ -31,9 +31,9 @@ export default function Hero() {
           onError={() => setVideoError(true)}
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-45 transform scale-105"
         >
-          {/* Using a high-quality free stock video from Pexels CDN showing maritime port & oil refineries/vessels */}
+          {/* Using the local hero video asset */}
           <source
-            src="https://player.vimeo.com/external/435649354.sd.mp4?s=d046c4f03a6c25374ed2e8b61c47df554a9d701f&profile_id=165&oauth2_token_id=57447761"
+            src="/hero_video.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
