@@ -1,0 +1,44 @@
+[
+  {
+    "id": "granular-urea",
+    "name": "Granular Urea N46%",
+    "category": "Agricultural Fertilizer",
+    "state": "Granular",
+    "specifications": {
+      "nitrogen": "46.0% Min",
+      "biuret": "1.0% Max",
+      "moisture": "0.5% Max",
+      "granulometry": "2.00 - 4.75mm (90% Min)",
+      "color": "Pure White"
+    },
+    "packaging": [
+      "Bulk (Loose Vessel)",
+      "50kg bags",
+      "1Mt Jumbo bag",
+      "50kg bags (20 bags packed inside 1Mt Jumbo bag)"
+    ],
+    "description": "Premium industrial grade agricultural Granular Urea suitable for direct application or mechanical broadcasting. Engineered for delayed release and high crop efficiency in warm climates.",
+    "targetMarkets": ["Southeast Asia", "East Africa", "Middle East"]
+  },
+  {
+    "id": "prilled-urea",
+    "name": "Prilled Urea N46%",
+    "category": "Agricultural / Industrial Fertilizer",
+    "state": "Prilled",
+    "specifications": {
+      "nitrogen": "46.0% Min",
+      "biuret": "1.0% Max",
+      "moisture": "0.5% Max",
+      "granulometry": "1.00 - 2.80mm (90% Min)",
+      "color": "Pure White"
+    },
+    "packaging": [
+      "Bulk (Loose Vessel)",
+      "50kg bags",
+      "1Mt Jumbo bag",
+      "50kg bags (20 bags packed inside 1Mt Jumbo bag)"
+    ],
+    "description": "High solubility Prilled Urea ideal for liquid fertilizer blends, fertigation setups, and rapid-release surface application across broadacre farming.",
+    "targetMarkets": ["Central Africa", "South Asia", "GCC region"]
+  }
+]
