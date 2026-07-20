@@ -1,3 +1,5 @@
+[![Deploy to GitHub Pages](https://github.com/Machinedra-Digital/samad/actions/workflows/github-pages.yml/badge.svg)](https://github.com/Machinedra-Digital/samad/actions/workflows/github-pages.yml)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
