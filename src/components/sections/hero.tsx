@@ -29,7 +29,7 @@ export default function Hero() {
           loop
           playsInline
           onError={() => setVideoError(true)}
-          className="absolute inset-0 w-full h-full object-cover z-0 opacity-45 transform scale-105"
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-80 transform scale-105"
         >
           {/* Using the local hero video asset */}
           <source
@@ -44,7 +44,7 @@ export default function Hero() {
       )}
 
       {/* Grid Overlay for readability and premium look */}
-      <div className="absolute inset-0 bg-brand-blue-dark/50 z-10" />
+      <div className="absolute inset-0 bg-brand-blue-dark/30 z-10" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0e3054_1px,transparent_1px),linear-gradient(to_bottom,#0e3054_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 z-10" />
 
       {/* Glow effects */}

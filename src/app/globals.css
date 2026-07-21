@@ -9,9 +9,9 @@
   --brand-blue-mid: #0e3054;
   --brand-blue-light: #164e87;
   
-  --brand-green-dark: #1b4332;
-  --brand-green-mid: #2d6a4f;
-  --brand-green-light: #52b788;
+  --brand-green-dark: #15803d; /* Tailwind green-700 */
+  --brand-green-mid: #22c55e; /* Tailwind green-500 */
+  --brand-green-light: #4ade80; /* Tailwind green-400 */
   
   --brand-gray-dark: #334155;
   --brand-gray-mid: #64748b;
