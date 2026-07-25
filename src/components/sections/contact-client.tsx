@@ -9,13 +9,12 @@ export default function ContactClient() {
     name: "",
     email: "",
     company: "",
-    volume: "",
-    port: "",
     message: "",
   });
 
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -24,19 +23,38 @@ export default function ContactClient() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    
-    setTimeout(() => {
-      setLoading(false);
+    setErrorMessage(null);
+    setStatus("idle");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to submit quote inquiry. Please try again.");
+      }
+
       setStatus("success");
       setFormState({
         name: "",
         email: "",
         company: "",
-        volume: "",
-        port: "",
         message: "",
       });
-    }, 1500);
+    } catch (err: unknown) {
+      console.error("Submission error:", err);
+      setStatus("error");
+      setErrorMessage(
+        err instanceof Error ? err.message : "An unexpected error occurred. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -65,7 +83,7 @@ export default function ContactClient() {
                 {/* H2 Heading 1 */}
                 <h2 className="text-2xl font-extrabold text-brand-blue-dark">B2B RFQ & Inquiry Desk</h2>
                 <p className="text-xs text-brand-gray-mid">
-                  Submit your target volume and destination port parameters below to receive a formal quotation from our sales team.
+                  Submit your details and inquiry parameters below to receive a formal quotation from our sales team.
                 </p>
               </div>
 
@@ -89,6 +107,11 @@ export default function ContactClient() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {status === "error" && errorMessage && (
+                    <div className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs font-medium">
+                      {errorMessage}
+                    </div>
+                  )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-1 text-left">
                       <label className="text-xs font-bold text-brand-blue-dark uppercase tracking-wider block">
@@ -120,49 +143,19 @@ export default function ContactClient() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <div className="space-y-1 text-left sm:col-span-1">
-                      <label className="text-xs font-bold text-brand-blue-dark uppercase tracking-wider block">
-                        Company Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="company"
-                        required
-                        value={formState.company}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-brand-gray-warm focus:border-brand-accent-mid focus:outline-none transition-colors duration-200 text-sm text-brand-blue-dark bg-brand-gray-light/35"
-                        placeholder="e.g. AgriTrade Ltd"
-                      />
-                    </div>
-                    <div className="space-y-1 text-left">
-                      <label className="text-xs font-bold text-brand-blue-dark uppercase tracking-wider block">
-                        Target Volume (MT) *
-                      </label>
-                      <input
-                        type="text"
-                        name="volume"
-                        required
-                        value={formState.volume}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-brand-gray-warm focus:border-brand-accent-mid focus:outline-none transition-colors duration-200 text-sm text-brand-blue-dark bg-brand-gray-light/35"
-                        placeholder="e.g. 5,000 MT"
-                      />
-                    </div>
-                    <div className="space-y-1 text-left">
-                      <label className="text-xs font-bold text-brand-blue-dark uppercase tracking-wider block">
-                        Destination Port *
-                      </label>
-                      <input
-                        type="text"
-                        name="port"
-                        required
-                        value={formState.port}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-brand-gray-warm focus:border-brand-accent-mid focus:outline-none transition-colors duration-200 text-sm text-brand-blue-dark bg-brand-gray-light/35"
-                        placeholder="e.g. Port of Mombasa"
-                      />
-                    </div>
+                  <div className="space-y-1 text-left">
+                    <label className="text-xs font-bold text-brand-blue-dark uppercase tracking-wider block">
+                      Company Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="company"
+                      required
+                      value={formState.company}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-brand-gray-warm focus:border-brand-accent-mid focus:outline-none transition-colors duration-200 text-sm text-brand-blue-dark bg-brand-gray-light/35"
+                      placeholder="e.g. AgriTrade Ltd"
+                    />
                   </div>
 
                   <div className="space-y-1 text-left">

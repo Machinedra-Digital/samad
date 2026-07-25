@@ -33,7 +33,7 @@ export default function Hero() {
         >
           {/* Using the local hero video asset */}
           <source
-            src="/samad/hero_video.mp4"
+            src="/hero_video.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -54,10 +54,10 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 z-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Column: Text Content */}
           <div className="lg:col-span-7 text-left space-y-6 flex flex-col items-start">
-            
+
             {/* Floating Badge */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
