@@ -61,7 +61,7 @@ export default function AboutPage() {
 
               {/* Text column */}
               <div className="space-y-6">
-                <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-brand-green-mid/10 text-brand-green-mid border border-brand-green-mid/20 text-xs font-semibold uppercase tracking-wider">
+                <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-md bg-brand-accent-mid/10 text-brand-accent-mid border border-brand-accent-mid/20 text-xs font-semibold uppercase tracking-wider">
                   Our Identity
                 </div>
                 <h2 className="text-3xl font-bold tracking-tight text-brand-blue-dark sm:text-4xl">
@@ -76,13 +76,13 @@ export default function AboutPage() {
 
                 <div className="grid grid-cols-2 gap-6 pt-4 border-t border-brand-gray-warm">
                   <div>
-                    <h4 className="text-2xl font-bold text-brand-green-mid">100K+ MT</h4>
+                    <h4 className="text-2xl font-bold text-brand-accent-mid">100K+ MT</h4>
                     <p className="text-xs text-brand-gray-mid uppercase tracking-widest font-semibold mt-1">
                       Annual Trade Capacity
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-2xl font-bold text-brand-green-mid">15+ Ports</h4>
+                    <h4 className="text-2xl font-bold text-brand-accent-mid">15+ Ports</h4>
                     <p className="text-xs text-brand-gray-mid uppercase tracking-widest font-semibold mt-1">
                       Target Shipping Lanes
                     </p>
@@ -92,7 +92,7 @@ export default function AboutPage() {
 
               {/* Graphic Mock Column */}
               <div className="relative bg-brand-blue-mid rounded-2xl p-8 text-white overflow-hidden shadow-xl border border-brand-blue-light/20 flex flex-col justify-between min-h-[400px]">
-                <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-brand-green-mid/20 rounded-full blur-[100px]" />
+                <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-brand-accent-mid/20 rounded-full blur-[100px]" />
 
                 <div>
                   <h3 className="text-xl font-bold tracking-wide">Our Mission</h3>
@@ -102,7 +102,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className="space-y-4 pt-10 border-t border-brand-blue-light/30">
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-green-light">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-accent-light">
                     Trade Networks Map
                   </h4>
                   <div className="grid grid-cols-3 gap-2 text-center text-xs">
@@ -130,7 +130,7 @@ export default function AboutPage() {
         <section className="py-16 md:py-24 bg-white border-y border-brand-gray-warm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="max-w-3xl mx-auto space-y-4 mb-16">
-              <span className="text-xs font-semibold uppercase tracking-widest text-brand-green-mid">
+              <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent-mid">
                 Why Choose Us
               </span>
               <h2 className="text-3xl font-bold tracking-tight text-brand-blue-dark sm:text-4xl">
@@ -149,7 +149,7 @@ export default function AboutPage() {
                     key={index}
                     className="p-6 rounded-xl bg-brand-gray-light border border-brand-gray-warm hover:border-brand-blue-light/30 transition-all duration-300 text-left space-y-4 group hover:shadow-lg"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-brand-blue-dark flex items-center justify-center text-brand-green-light group-hover:bg-brand-green-mid group-hover:text-white transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-lg bg-brand-blue-dark flex items-center justify-center text-brand-accent-light group-hover:bg-brand-accent-mid group-hover:text-white transition-colors duration-300">
                       <IconComponent className="w-6 h-6" />
                     </div>
                     <h3 className="text-lg font-bold text-brand-blue-dark">{strength.title}</h3>

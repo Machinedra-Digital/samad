@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} h-full scroll-smooth`}>
       <body className="min-h-full flex flex-col font-sans antialiased bg-brand-gray-light text-brand-blue-dark">
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-green-mid focus:text-white focus:rounded-md">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-accent-mid focus:text-white focus:rounded-md">
           Skip to main content
         </a>
         {children}

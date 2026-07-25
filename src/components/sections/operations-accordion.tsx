@@ -40,7 +40,7 @@ export default function OperationsAccordion() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
           <div className="space-y-4 max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-brand-green-mid bg-brand-green-mid/10 px-3.5 py-1.5 rounded-full border border-brand-green-mid/20">
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent-mid bg-brand-accent-mid/10 px-3.5 py-1.5 rounded-full border border-brand-accent-mid/20">
               Supply Chain
             </span>
             <h2 className="text-3xl font-extrabold tracking-tight text-brand-blue-dark sm:text-4xl font-heading">
@@ -67,11 +67,11 @@ export default function OperationsAccordion() {
           {/* Left Side: Creative Visual Panel (inspired by GreenMarket) */}
           <div className="lg:col-span-5 relative rounded-3xl bg-brand-blue-dark text-white p-8 overflow-hidden shadow-xl flex flex-col justify-between min-h-[400px]">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#0e3054_1px,transparent_1px),linear-gradient(to_bottom,#0e3054_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-brand-green-mid/25 rounded-full blur-[100px]" />
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-brand-accent-mid/25 rounded-full blur-[100px]" />
             <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-brand-blue-light/20 rounded-full blur-[100px]" />
 
             <div className="relative z-10 space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-brand-green-mid/20 text-brand-green-light px-3 py-1 rounded-full border border-brand-green-light/20 text-[10px] font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center space-x-2 bg-brand-accent-mid/20 text-brand-accent-light px-3 py-1 rounded-full border border-brand-accent-light/20 text-[10px] font-bold uppercase tracking-wider">
                 <Anchor className="w-3.5 h-3.5" />
                 <span>Dubai, UAE HQ</span>
               </div>
@@ -84,7 +84,7 @@ export default function OperationsAccordion() {
             </div>
 
             <div className="relative z-10 space-y-4 pt-12 border-t border-brand-blue-light/20">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-green-light">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-accent-light">
                 Logistical Milestones
               </h4>
               <div className="space-y-3">
@@ -94,7 +94,7 @@ export default function OperationsAccordion() {
                   "Direct Ocean Shipping Routes",
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center space-x-3 text-xs text-brand-gray-light">
-                    <CheckCircle2 className="w-4 h-4 text-brand-green-light shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-brand-accent-light shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -123,8 +123,8 @@ export default function OperationsAccordion() {
                       <div
                         className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 border transition-colors duration-300 ${
                           isActive
-                            ? "bg-brand-blue-mid text-brand-green-light border-brand-blue-light/40"
-                            : "bg-white text-brand-green-mid border-brand-gray-warm/60"
+                            ? "bg-brand-blue-mid text-brand-accent-light border-brand-blue-light/40"
+                            : "bg-white text-brand-accent-mid border-brand-gray-warm/60"
                         }`}
                       >
                         <OpIcon className="w-4 h-4" />
@@ -134,7 +134,7 @@ export default function OperationsAccordion() {
                     <span
                       className={`w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-300 ${
                         isActive
-                          ? "bg-brand-blue-mid text-brand-green-light border-brand-blue-light/35 rotate-45"
+                          ? "bg-brand-blue-mid text-brand-accent-light border-brand-blue-light/35 rotate-45"
                           : "bg-white text-brand-gray-mid border-brand-gray-warm/60 rotate-0"
                       }`}
                     >
@@ -148,7 +148,7 @@ export default function OperationsAccordion() {
                       isActive ? "max-h-[160px] opacity-100 mt-4" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <p className={`text-sm ${isActive ? "text-brand-green-light" : "text-brand-gray-dark"} font-semibold`}>
+                    <p className={`text-sm ${isActive ? "text-brand-accent-light" : "text-brand-gray-dark"} font-semibold`}>
                       {op.desc}
                     </p>
                     <p className={`text-xs mt-2 leading-relaxed ${isActive ? "text-brand-gray-warm" : "text-brand-gray-mid"}`}>

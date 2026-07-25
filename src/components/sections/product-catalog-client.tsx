@@ -62,7 +62,7 @@ export default function ProductCatalogClient() {
             
             {/* Sidebar Product Toggles */}
             <div className="lg:col-span-4 space-y-4">
-              <span className="text-xs font-semibold uppercase tracking-widest text-brand-green-mid block mb-2">
+              <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent-mid block mb-2">
                 Select Grade
               </span>
               
@@ -80,7 +80,7 @@ export default function ProductCatalogClient() {
                   >
                     <div className="space-y-1">
                       <div className="flex items-center space-x-2">
-                        <Layers className={`w-4 h-4 ${isSelected ? "text-brand-green-light" : "text-brand-green-mid"}`} />
+                        <Layers className={`w-4 h-4 ${isSelected ? "text-brand-accent-light" : "text-brand-accent-mid"}`} />
                         <span className="font-bold tracking-wide">{prod.name}</span>
                       </div>
                       <span className={`text-xs block ${isSelected ? "text-brand-gray-mid" : "text-brand-gray-mid"}`}>
@@ -88,7 +88,7 @@ export default function ProductCatalogClient() {
                       </span>
                     </div>
                     <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${
-                      isSelected ? "text-brand-green-light translate-x-1" : "text-brand-gray-mid group-hover:translate-x-1"
+                      isSelected ? "text-brand-accent-light translate-x-1" : "text-brand-gray-mid group-hover:translate-x-1"
                     }`} />
                   </button>
                 );
@@ -181,7 +181,7 @@ export default function ProductCatalogClient() {
                         onClick={() => setSelectedPack(pack)}
                         className={`px-4 py-2.5 rounded-lg border text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center space-x-2 ${
                           isSelected
-                            ? "bg-brand-green-mid border-brand-green-mid text-white shadow-md shadow-brand-green-mid/20"
+                            ? "bg-brand-accent-mid border-brand-accent-mid text-white shadow-md shadow-brand-accent-mid/20"
                             : "bg-brand-gray-light border-brand-gray-warm hover:border-brand-gray-warm text-brand-gray-dark hover:bg-brand-gray-warm/40"
                         }`}
                       >
@@ -203,7 +203,7 @@ export default function ProductCatalogClient() {
                     className="p-6 rounded-xl bg-brand-blue-dark/5 border border-brand-blue-mid/10 space-y-4"
                   >
                     <div className="flex items-center space-x-3 text-brand-blue-dark">
-                      <ShoppingBag className="w-5 h-5 text-brand-green-mid" />
+                      <ShoppingBag className="w-5 h-5 text-brand-accent-mid" />
                       <h4 className="font-bold tracking-wide">
                         {packagingDetails[selectedPack]?.title || selectedPack}
                       </h4>
@@ -211,9 +211,9 @@ export default function ProductCatalogClient() {
                     <p className="text-sm text-brand-gray-dark leading-relaxed">
                       {packagingDetails[selectedPack]?.desc}
                     </p>
-                    <div className="flex items-start space-x-2.5 bg-brand-green-mid/5 border border-brand-green-mid/15 p-4 rounded-lg">
-                      <Truck className="w-4 h-4 text-brand-green-mid shrink-0 mt-0.5" />
-                      <p className="text-xs text-brand-green-dark leading-relaxed">
+                    <div className="flex items-start space-x-2.5 bg-brand-accent-mid/5 border border-brand-accent-mid/15 p-4 rounded-lg">
+                      <Truck className="w-4 h-4 text-brand-accent-mid shrink-0 mt-0.5" />
+                      <p className="text-xs text-brand-accent-dark leading-relaxed">
                         <strong>B2B Logistics Tip:</strong> {packagingDetails[selectedPack]?.tip}
                       </p>
                     </div>
@@ -231,7 +231,7 @@ export default function ProductCatalogClient() {
                 </div>
                 <a
                   href="/contact/"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-brand-green-mid hover:bg-brand-green-light text-white text-xs font-semibold uppercase tracking-wider transition-colors duration-300 shadow-md"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-brand-accent-mid hover:bg-brand-accent-light text-white text-xs font-semibold uppercase tracking-wider transition-colors duration-300 shadow-md"
                 >
                   <MessageSquare className="w-4 h-4 mr-2" />
                   Request Quote

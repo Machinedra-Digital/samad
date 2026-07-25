@@ -14,14 +14,14 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="bg-brand-green-mid p-2 rounded-lg flex items-center justify-center">
+              <div className="bg-brand-accent-mid p-2 rounded-lg flex items-center justify-center">
                 <Leaf className="w-5 h-5 text-white" />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-wider text-white uppercase">
                   Arabian Samad
                 </span>
-                <span className="text-[10px] uppercase tracking-widest text-brand-green-light font-medium -mt-1">
+                <span className="text-[10px] uppercase tracking-widest text-brand-accent-light font-medium -mt-1">
                   Fertilizers & Logistics
                 </span>
               </div>
@@ -38,22 +38,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/" className="hover:text-brand-green-light transition-colors duration-200">
+                <Link href="/" className="hover:text-brand-accent-light transition-colors duration-200">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about/" className="hover:text-brand-green-light transition-colors duration-200">
+                <Link href="/about/" className="hover:text-brand-accent-light transition-colors duration-200">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/products/" className="hover:text-brand-green-light transition-colors duration-200">
+                <Link href="/products/" className="hover:text-brand-accent-light transition-colors duration-200">
                   Products Catalog
                 </Link>
               </li>
               <li>
-                <Link href="/contact/" className="hover:text-brand-green-light transition-colors duration-200">
+                <Link href="/contact/" className="hover:text-brand-accent-light transition-colors duration-200">
                   Contact & Location
                 </Link>
               </li>
@@ -67,19 +67,19 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-brand-gray-mid">
               <li className="flex items-center space-x-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-green-light"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-light"></span>
                 <span>East Africa (Mombasa, Dar es Salaam)</span>
               </li>
               <li className="flex items-center space-x-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-green-light"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-light"></span>
                 <span>West Africa (Lagos, Tema)</span>
               </li>
               <li className="flex items-center space-x-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-green-light"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-light"></span>
                 <span>South Asia (India, Bangladesh)</span>
               </li>
               <li className="flex items-center space-x-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-green-light"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-light"></span>
                 <span>Southeast Asia (Vietnam, Indonesia)</span>
               </li>
             </ul>
@@ -92,18 +92,18 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-3">
-                <MapPin className="w-4 h-4 text-brand-green-light shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-brand-accent-light shrink-0 mt-0.5" />
                 <span className="text-brand-gray-mid">
                   Business Bay, Dubai, United Arab Emirates (UAE)
                 </span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-brand-green-light shrink-0" />
+                <Phone className="w-4 h-4 text-brand-accent-light shrink-0" />
                 <span className="text-brand-gray-mid">+971 4 123 4567</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-brand-green-light shrink-0" />
-                <a href="mailto:info@arabiansamad.com" className="hover:text-brand-green-light transition-colors duration-200">
+                <Mail className="w-4 h-4 text-brand-accent-light shrink-0" />
+                <a href="mailto:info@arabiansamad.com" className="hover:text-brand-accent-light transition-colors duration-200">
                   info@arabiansamad.com
                 </a>
               </li>
@@ -120,10 +120,10 @@ export default function Footer() {
             &copy; {currentYear} Arabian Samad. All rights reserved. Registered under UAE commercial laws.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy-policy" className="hover:text-brand-green-light transition-colors">
+            <Link href="/privacy-policy" className="hover:text-brand-accent-light transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-brand-green-light transition-colors">
+            <Link href="/terms" className="hover:text-brand-accent-light transition-colors">
               Terms of Service
             </Link>
           </div>

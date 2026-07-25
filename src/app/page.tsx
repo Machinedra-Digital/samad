@@ -26,7 +26,7 @@ export default function Home() {
             
             {/* Section Header */}
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-              <span className="text-xs font-semibold uppercase tracking-widest text-brand-green-mid bg-brand-green-mid/10 px-3.5 py-1.5 rounded-full border border-brand-green-mid/20">
+              <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent-mid bg-brand-accent-mid/10 px-3.5 py-1.5 rounded-full border border-brand-accent-mid/20">
                 Corporate Logistics
               </span>
               <h2 className="text-3xl font-extrabold tracking-tight text-brand-blue-dark sm:text-4xl font-heading">
@@ -41,9 +41,9 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
               
               {/* Card 1: Maritime Clearing (Large Stat) */}
-              <div className="lg:col-span-4 p-8 rounded-3xl bg-brand-gray-light border border-brand-gray-warm/60 hover:shadow-xl hover:border-brand-green-mid/25 transition-all duration-300 flex flex-col justify-between group">
+              <div className="lg:col-span-4 p-8 rounded-3xl bg-brand-gray-light border border-brand-gray-warm/60 hover:shadow-xl hover:border-brand-accent-mid/25 transition-all duration-300 flex flex-col justify-between group">
                 <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-full bg-brand-green-mid/10 text-brand-green-mid flex items-center justify-center transition-colors group-hover:bg-brand-green-mid group-hover:text-white shadow-sm">
+                  <div className="w-12 h-12 rounded-full bg-brand-accent-mid/10 text-brand-accent-mid flex items-center justify-center transition-colors group-hover:bg-brand-accent-mid group-hover:text-white shadow-sm">
                     <Ship className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
@@ -58,13 +58,13 @@ export default function Home() {
 
               {/* Card 2: Custom Packaging (Deep Blue Contrast Card) */}
               <div className="lg:col-span-4 p-8 rounded-3xl bg-brand-blue-dark text-white shadow-xl hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-green-mid/25 rounded-full blur-3xl" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent-mid/25 rounded-full blur-3xl" />
                 <div className="space-y-4 relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-brand-blue-mid text-brand-green-light flex items-center justify-center border border-brand-blue-light/35 shadow-sm">
+                  <div className="w-12 h-12 rounded-full bg-brand-blue-mid text-brand-accent-light flex items-center justify-center border border-brand-blue-light/35 shadow-sm">
                     <Package className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <div className="text-4xl font-extrabold text-brand-green-light font-heading">Flexible</div>
+                    <div className="text-4xl font-extrabold text-brand-accent-light font-heading">Flexible</div>
                     <h3 className="text-lg font-bold text-white font-heading">Custom Packaging</h3>
                   </div>
                   <p className="text-sm text-brand-gray-warm leading-relaxed">
@@ -72,16 +72,16 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="pt-6 relative z-10 flex justify-end">
-                  <span className="w-8 h-8 rounded-full bg-brand-blue-mid flex items-center justify-center text-brand-green-light border border-brand-blue-light/30 transition-transform duration-300 group-hover:rotate-45 group-hover:bg-brand-green-mid group-hover:text-white">
+                  <span className="w-8 h-8 rounded-full bg-brand-blue-mid flex items-center justify-center text-brand-accent-light border border-brand-blue-light/30 transition-transform duration-300 group-hover:rotate-45 group-hover:bg-brand-accent-mid group-hover:text-white">
                     <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
               </div>
 
               {/* Card 3: Trade Finance (Stat Card) */}
-              <div className="lg:col-span-4 p-8 rounded-3xl bg-brand-gray-light border border-brand-gray-warm/60 hover:shadow-xl hover:border-brand-green-mid/25 transition-all duration-300 flex flex-col justify-between group">
+              <div className="lg:col-span-4 p-8 rounded-3xl bg-brand-gray-light border border-brand-gray-warm/60 hover:shadow-xl hover:border-brand-accent-mid/25 transition-all duration-300 flex flex-col justify-between group">
                 <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-full bg-brand-green-mid/10 text-brand-green-mid flex items-center justify-center transition-colors group-hover:bg-brand-green-mid group-hover:text-white shadow-sm">
+                  <div className="w-12 h-12 rounded-full bg-brand-accent-mid/10 text-brand-accent-mid flex items-center justify-center transition-colors group-hover:bg-brand-accent-mid group-hover:text-white shadow-sm">
                     <Landmark className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
@@ -95,9 +95,9 @@ export default function Home() {
               </div>
 
               {/* Card 4: SGS Quality Auditing (Wide Horizontal Card) */}
-              <div className="md:col-span-2 lg:col-span-12 p-8 rounded-3xl bg-brand-green-mid/5 border border-brand-green-mid/15 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 group">
+              <div className="md:col-span-2 lg:col-span-12 p-8 rounded-3xl bg-brand-accent-mid/5 border border-brand-accent-mid/15 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 group">
                 <div className="flex items-center gap-5">
-                  <div className="w-14 h-14 rounded-full bg-brand-green-mid text-white flex items-center justify-center shrink-0 shadow-md shadow-brand-green-mid/15">
+                  <div className="w-14 h-14 rounded-full bg-brand-accent-mid text-white flex items-center justify-center shrink-0 shadow-md shadow-brand-accent-mid/15">
                     <ShieldCheck className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
@@ -108,7 +108,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="shrink-0">
-                  <span className="text-xs font-bold uppercase tracking-widest text-brand-green-mid bg-brand-green-mid/10 px-4 py-2 rounded-full border border-brand-green-mid/20">
+                  <span className="text-xs font-bold uppercase tracking-widest text-brand-accent-mid bg-brand-accent-mid/10 px-4 py-2 rounded-full border border-brand-accent-mid/20">
                     99.8% Pure Quality
                   </span>
                 </div>
@@ -124,7 +124,7 @@ export default function Home() {
         <section className="py-20 md:py-28 bg-brand-gray-light">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="max-w-3xl mx-auto space-y-4 mb-16">
-              <span className="text-xs font-semibold uppercase tracking-widest text-brand-green-mid">
+              <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent-mid">
                 Core Supplies
               </span>
               <h2 className="text-3xl font-extrabold tracking-tight text-brand-blue-dark sm:text-4xl">
@@ -138,10 +138,10 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               
               {/* Granular Box */}
-              <div className="bg-white p-8 rounded-3xl border border-brand-gray-warm/60 shadow-md hover:shadow-xl hover:border-brand-green-mid/20 transition-all duration-300 space-y-6 text-left flex flex-col justify-between group">
+              <div className="bg-white p-8 rounded-3xl border border-brand-gray-warm/60 shadow-md hover:shadow-xl hover:border-brand-accent-mid/20 transition-all duration-300 space-y-6 text-left flex flex-col justify-between group">
                 <div className="space-y-4">
                   <div className="flex justify-between items-start">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-brand-green-mid bg-brand-green-mid/10 px-3 py-1 rounded-full border border-brand-green-mid/15 font-heading">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-brand-accent-mid bg-brand-accent-mid/10 px-3 py-1 rounded-full border border-brand-accent-mid/15 font-heading">
                       Agricultural Fertilizer
                     </span>
                     <span className="text-[10px] font-bold uppercase tracking-widest text-brand-gray-mid font-heading">
@@ -158,19 +158,19 @@ export default function Home() {
                     <h4 className="text-xs font-bold uppercase tracking-wider text-brand-blue-dark font-heading">Target Specifications</h4>
                     <ul className="grid grid-cols-2 gap-y-2.5 gap-x-4 text-xs text-brand-gray-dark">
                       <li className="flex items-center space-x-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-green-mid"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-mid"></span>
                         <span>Nitrogen: 46% Min</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-green-mid"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-mid"></span>
                         <span>Biuret: 1.0% Max</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-green-mid"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-mid"></span>
                         <span>Size: 2.0-4.75mm</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-green-mid"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-mid"></span>
                         <span>Moisture: 0.5% Max</span>
                       </li>
                     </ul>
@@ -182,7 +182,7 @@ export default function Home() {
                     className="inline-flex items-center justify-between w-full pl-6 pr-3 py-3.5 rounded-full bg-brand-blue-dark hover:bg-brand-blue-mid text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 group gap-4"
                   >
                     <span>View Specifications</span>
-                    <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-blue-dark transition-all duration-300 group-hover:rotate-45 group-hover:bg-brand-green-mid group-hover:text-white">
+                    <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-blue-dark transition-all duration-300 group-hover:rotate-45 group-hover:bg-brand-accent-mid group-hover:text-white">
                       <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </Link>
@@ -190,10 +190,10 @@ export default function Home() {
               </div>
 
               {/* Prilled Box */}
-              <div className="bg-white p-8 rounded-3xl border border-brand-gray-warm/60 shadow-md hover:shadow-xl hover:border-brand-green-mid/20 transition-all duration-300 space-y-6 text-left flex flex-col justify-between group">
+              <div className="bg-white p-8 rounded-3xl border border-brand-gray-warm/60 shadow-md hover:shadow-xl hover:border-brand-accent-mid/20 transition-all duration-300 space-y-6 text-left flex flex-col justify-between group">
                 <div className="space-y-4">
                   <div className="flex justify-between items-start">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-brand-green-mid bg-brand-green-mid/10 px-3 py-1 rounded-full border border-brand-green-mid/15 font-heading">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-brand-accent-mid bg-brand-accent-mid/10 px-3 py-1 rounded-full border border-brand-accent-mid/15 font-heading">
                       Agricultural / Industrial
                     </span>
                     <span className="text-[10px] font-bold uppercase tracking-widest text-brand-gray-mid font-heading">
@@ -210,19 +210,19 @@ export default function Home() {
                     <h4 className="text-xs font-bold uppercase tracking-wider text-brand-blue-dark font-heading">Target Specifications</h4>
                     <ul className="grid grid-cols-2 gap-y-2.5 gap-x-4 text-xs text-brand-gray-dark">
                       <li className="flex items-center space-x-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-green-mid"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-mid"></span>
                         <span>Nitrogen: 46% Min</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-green-mid"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-mid"></span>
                         <span>Biuret: 1.0% Max</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-green-mid"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-mid"></span>
                         <span>Size: 1.0-2.80mm</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-green-mid"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-mid"></span>
                         <span>Moisture: 0.5% Max</span>
                       </li>
                     </ul>
@@ -234,7 +234,7 @@ export default function Home() {
                     className="inline-flex items-center justify-between w-full pl-6 pr-3 py-3.5 rounded-full bg-brand-blue-dark hover:bg-brand-blue-mid text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 group gap-4"
                   >
                     <span>View Specifications</span>
-                    <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-blue-dark transition-all duration-300 group-hover:rotate-45 group-hover:bg-brand-green-mid group-hover:text-white">
+                    <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-blue-dark transition-all duration-300 group-hover:rotate-45 group-hover:bg-brand-accent-mid group-hover:text-white">
                       <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </Link>
@@ -248,7 +248,7 @@ export default function Home() {
         {/* CTA B2B Section */}
         <section className="bg-brand-blue-dark text-white py-20 md:py-28 relative overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#0e3054_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10" />
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-green-mid/10 rounded-full blur-[150px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-accent-mid/10 rounded-full blur-[150px] pointer-events-none" />
           
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl font-heading">
@@ -260,11 +260,11 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/contact/"
-                className="w-full sm:w-auto inline-flex items-center justify-between pl-8 pr-4 py-4 text-xs font-bold uppercase tracking-wider text-white bg-brand-green-mid hover:bg-brand-green-light rounded-full shadow-md transition-all duration-300 group gap-4"
+                className="w-full sm:w-auto inline-flex items-center justify-between pl-8 pr-4 py-4 text-xs font-bold uppercase tracking-wider text-white bg-brand-accent-mid hover:bg-brand-accent-light rounded-full shadow-md transition-all duration-300 group gap-4"
               >
                 <span>Contact Us</span>
-                <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-green-mid transition-all duration-300 group-hover:rotate-45">
-                  <ArrowRight className="w-3.5 h-3.5 text-brand-green-mid" />
+                <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-accent-mid transition-all duration-300 group-hover:rotate-45">
+                  <ArrowRight className="w-3.5 h-3.5 text-brand-accent-mid" />
                 </span>
               </Link>
               <Link
