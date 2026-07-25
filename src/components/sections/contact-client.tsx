@@ -212,16 +212,8 @@ export default function ContactClient() {
                     <div>
                       <h4 className="font-bold text-brand-blue-dark">Address</h4>
                       <p className="text-xs text-brand-gray-mid">
-                        Suite 1204, Exchange Tower, Business Bay, Dubai, United Arab Emirates (UAE)
+                        OFFICE NO. 1114, ADEL MOHAMED ALI JASIM AL MARZOUQ BUILDING, AL QUOZ 1, DUBAI, UNITED ARAB EMIRATES
                       </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-3 text-sm">
-                    <Phone className="w-5 h-5 text-brand-accent-mid shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-bold text-brand-blue-dark">Phone</h4>
-                      <p className="text-xs text-brand-gray-mid">+971 4 123 4567</p>
                     </div>
                   </div>
 
@@ -241,7 +233,7 @@ export default function ContactClient() {
                 <div className="grid grid-cols-2 gap-4 border-t border-brand-gray-warm pt-6">
                   <div className="flex items-center space-x-2">
                     <Building2 className="w-4 h-4 text-brand-accent-mid" />
-                    <span className="text-xs font-semibold text-brand-gray-dark">UAE Reg No. 129481</span>
+                    <span className="text-xs font-semibold text-brand-gray-dark">Arabian Samad L.L.C</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Anchor className="w-4 h-4 text-brand-accent-mid" />
@@ -254,7 +246,7 @@ export default function ContactClient() {
               <div className="bg-white rounded-2xl border border-brand-gray-warm shadow-md overflow-hidden h-[300px] relative">
                 <iframe
                   title="Arabian Samad Office Location Dubai"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1785265432497!2d55.2678888!3d25.1912959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69d38c6426ad%3A0xc3b8a32d753!2sBusiness+Bay+-+Dubai!5e0!3m2!1sen!2sae!4v1749033748"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3611.751325350727!2d55.2341!3d25.1438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6a22f36d1f95%3A0x1d2110c14b2d56a!2sAl%20Quoz%201%20-%20Dubai!5e0!3m2!1sen!2sae!4v1749033748"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

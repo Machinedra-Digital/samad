@@ -68,19 +68,11 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-brand-gray-mid">
               <li className="flex items-center space-x-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-light"></span>
-                <span>East Africa (Mombasa, Dar es Salaam)</span>
+                <span>Asia</span>
               </li>
               <li className="flex items-center space-x-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-light"></span>
-                <span>West Africa (Lagos, Tema)</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-light"></span>
-                <span>South Asia (India, Bangladesh)</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-accent-light"></span>
-                <span>Southeast Asia (Vietnam, Indonesia)</span>
+                <span>Africa</span>
               </li>
             </ul>
           </div>
@@ -94,12 +86,8 @@ export default function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-brand-accent-light shrink-0 mt-0.5" />
                 <span className="text-brand-gray-mid">
-                  Business Bay, Dubai, United Arab Emirates (UAE)
+                  OFFICE NO. 1114, ADEL MOHAMED ALI JASIM AL MARZOUQ BUILDING, AL QUOZ 1, DUBAI, UNITED ARAB EMIRATES
                 </span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Phone className="w-4 h-4 text-brand-accent-light shrink-0" />
-                <span className="text-brand-gray-mid">+971 4 123 4567</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-brand-accent-light shrink-0" />
