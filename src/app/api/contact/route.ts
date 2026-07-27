@@ -35,7 +35,9 @@ export async function POST(req: Request) {
     const portNum = Number(process.env.SMTP_PORT) || 587;
     const isSecure = process.env.SMTP_SECURE === "true";
     const user = process.env.SMTP_USER || "info@arabiansamad.com";
-    const pass = process.env.SMTP_PASS;
+    const pass = process.env.SMTP_PASS_B64
+      ? Buffer.from(process.env.SMTP_PASS_B64, "base64").toString("utf-8")
+      : process.env.SMTP_PASS;
     const recipientEmail = process.env.CONTACT_RECIPIENT_EMAIL || "info@arabiansamad.com";
 
     // Create Nodemailer Transporter

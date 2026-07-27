@@ -17,7 +17,6 @@ export default function Home() {
       <Header />
       
       <main id="main-content" className="font-sans bg-brand-gray-light">
-        <h1 className="sr-only">Arabian Samad - B2B Fertilizer & Urea N46% Distribution</h1>
         <Hero />
         
         {/* Intro Section - UAE Base & Logistics */}

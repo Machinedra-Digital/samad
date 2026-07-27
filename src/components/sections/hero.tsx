@@ -1,70 +1,34 @@
-"use client";
-
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { motion } from "framer-motion";
+import HeroVideoBackground from "./hero-video-background";
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoError, setVideoError] = useState(false);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch((err) => {
-        console.log("Autoplay blocked or video error: ", err);
-        setVideoError(true);
-      });
-    }
-  }, []);
-
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-brand-blue-dark">
-      {/* Background Media */}
-      {!videoError ? (
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          onError={() => setVideoError(true)}
-          className="absolute inset-0 w-full h-full object-cover z-0 opacity-80 transform scale-105"
-        >
-          {/* Using the local hero video asset */}
-          <source
-            src="/hero_video.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-      ) : (
-        /* Dynamic aesthetic fallback gradient representing B2B industrial & agriculture */
-        <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue-dark via-brand-blue-mid to-brand-accent-dark opacity-80 z-0" />
-      )}
+      {/* Dynamic aesthetic background gradient representing B2B industrial & agriculture */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue-dark via-brand-blue-mid to-brand-accent-dark opacity-90 z-0" />
+
+      {/* Deferred Desktop Background Video (Isolated client component) */}
+      <HeroVideoBackground />
 
       {/* Grid Overlay for readability and premium look */}
       <div className="absolute inset-0 bg-brand-blue-dark/30 z-10" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0e3054_1px,transparent_1px),linear-gradient(to_bottom,#0e3054_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 z-10" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0e3054_1px,transparent_1px),linear-gradient(to_bottom,#0e3054_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20 z-10" />
 
-      {/* Glow effects */}
-      <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-brand-accent-mid/20 rounded-full blur-[120px] pointer-events-none z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-blue-light/10 rounded-full blur-[150px] pointer-events-none z-10" />
+      {/* Optimized Radial Glow effects (Zero heavy GPU filter blur computation) */}
+      <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-[radial-gradient(circle_at_center,#0284c7_0%,transparent_70%)] opacity-30 pointer-events-none z-10" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[radial-gradient(circle_at_center,#38bdf8_0%,transparent_70%)] opacity-20 pointer-events-none z-10" />
 
-      {/* Hero Content */}
+      {/* Hero Content - Instant Paint for LCP Optimization */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 z-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
-          {/* Left Column: Text Content */}
+          {/* Left Column: Text Content (Rendered instantly as a pure Server Component) */}
           <div className="lg:col-span-7 text-left space-y-6 flex flex-col items-start">
 
             {/* Floating Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-blue-mid/60 backdrop-blur-md border border-brand-blue-light/30 shadow-md"
-            >
+            <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-blue-mid/60 border border-brand-blue-light/30 shadow-md">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent-light opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-accent-light"></span>
@@ -72,38 +36,23 @@ export default function Hero() {
               <span className="text-xs font-semibold uppercase tracking-wider text-brand-gray-light">
                 UAE Base • Global Reach to Asia & Africa
               </span>
-            </motion.div>
+            </div>
 
-            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight font-heading"
-            >
+            {/* Headline - LCP Element (Immediate Static Server HTML Visibility) */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight font-heading">
               Empowering Global Agriculture with High-Performance{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent-light to-brand-accent-mid block lg:inline">
                 Urea N46%
               </span>
-            </motion.h1>
+            </h1>
 
             {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base sm:text-lg text-brand-gray-warm max-w-2xl leading-relaxed font-sans"
-            >
+            <p className="text-base sm:text-lg text-brand-gray-warm max-w-2xl leading-relaxed font-sans">
               Arabian Samad is a premier fertilizer trading and logistics partner based in the UAE. We distribute prilled and granular Urea N46% in custom packaging configurations to support robust food production systems globally.
-            </motion.p>
+            </p>
 
             {/* Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
-            >
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <Link
                 href="/contact/"
                 className="w-full sm:w-auto inline-flex items-center justify-between pl-6 pr-3 py-3.5 text-sm font-bold uppercase tracking-wider text-white bg-brand-accent-mid hover:bg-brand-accent-light rounded-full shadow-lg hover:shadow-brand-accent-mid/20 transition-all duration-300 group gap-4"
@@ -119,15 +68,10 @@ export default function Hero() {
               >
                 Specifications
               </Link>
-            </motion.div>
+            </div>
 
             {/* Micro Stats Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex items-center gap-6 mt-4 p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-lg w-full sm:w-auto"
-            >
+            <div className="flex items-center gap-6 mt-4 p-4 rounded-2xl bg-brand-blue-dark/80 border border-white/10 shadow-lg w-full sm:w-auto">
               <div>
                 <div className="text-2xl font-extrabold text-brand-accent-light font-heading">SGS Certified</div>
                 <div className="text-xs text-brand-gray-warm">100% Quality Inspected Cargo</div>
@@ -137,22 +81,17 @@ export default function Hero() {
                 <div className="text-2xl font-extrabold text-brand-accent-light font-heading">GCC Sourced</div>
                 <div className="text-xs text-brand-gray-warm">Standard ISO Compliance</div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Right Column: Visual Collages / Cards Grid */}
           <div className="lg:col-span-5 relative w-full h-[350px] sm:h-[400px] flex items-center justify-center lg:justify-end mt-8 lg:mt-0">
             {/* Background Glow */}
-            <div className="absolute w-[250px] h-[250px] bg-brand-accent-mid/20 rounded-full blur-[80px]" />
+            <div className="absolute w-[250px] h-[250px] bg-[radial-gradient(circle_at_center,#0284c7_0%,transparent_70%)] opacity-30" />
 
             {/* Overlapping Bento/Collage Cards */}
             {/* Card 1: Granular Urea Info Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 50, y: -20 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute top-4 left-4 sm:left-10 w-[240px] p-6 rounded-2xl bg-brand-blue-dark/75 backdrop-blur-md border border-brand-blue-light/35 shadow-xl space-y-4 hover:-translate-y-1 transition-transform duration-300 group z-10"
-            >
+            <div className="absolute top-4 left-4 sm:left-10 w-[240px] p-6 rounded-2xl bg-brand-blue-dark/95 border border-brand-blue-light/35 shadow-xl space-y-4 hover:-translate-y-1 transition-transform duration-300 group z-10">
               <div className="flex justify-between items-start">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-brand-accent-light bg-brand-accent-mid/10 px-2 py-0.5 rounded border border-brand-accent-mid/20">
                   Granular Grade
@@ -169,15 +108,10 @@ export default function Hero() {
                 <span>Particle: 2.00 - 4.75mm</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
-            </motion.div>
+            </div>
 
             {/* Card 2: Prilled Urea Info Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 50, y: 50 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute bottom-4 right-4 sm:right-10 w-[240px] p-6 rounded-2xl bg-brand-blue-mid/45 backdrop-blur-md border border-brand-blue-light/20 shadow-xl space-y-4 hover:-translate-y-1 transition-transform duration-300 group z-20"
-            >
+            <div className="absolute bottom-4 right-4 sm:right-10 w-[240px] p-6 rounded-2xl bg-brand-blue-dark/90 border border-brand-blue-light/30 shadow-xl space-y-4 hover:-translate-y-1 transition-transform duration-300 group z-20">
               <div className="flex justify-between items-start">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-brand-accent-light bg-brand-accent-mid/10 px-2 py-0.5 rounded border border-brand-accent-mid/20">
                   Prilled Grade
@@ -194,7 +128,7 @@ export default function Hero() {
                 <span>Particle: 1.00 - 2.80mm</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
-            </motion.div>
+            </div>
           </div>
 
         </div>
@@ -203,13 +137,9 @@ export default function Hero() {
       {/* Down Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center">
         <span className="text-[10px] uppercase tracking-widest text-brand-gray-mid mb-2 font-medium">Scroll Down</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="text-brand-accent-light"
-        >
+        <div className="text-brand-accent-light animate-bounce">
           <ChevronDown className="w-5 h-5" />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
