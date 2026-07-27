@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight, Leaf } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -72,11 +71,7 @@ export default function Header() {
                   >
                     {item.name}
                     {isActive && (
-                      <motion.span
-                        layoutId="activeNavBorder"
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-accent-light rounded-full"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                      />
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-accent-light rounded-full transition-all duration-300" />
                     )}
                   </Link>
                 );
@@ -109,48 +104,40 @@ export default function Header() {
       </header>
 
       {/* Mobile Drawer */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-[60px] z-40 bg-brand-blue-dark/95 backdrop-blur-lg border-t border-brand-blue-mid/30 md:hidden flex flex-col justify-between p-6"
-          >
-            <div className="space-y-6 py-6">
-              {navItems.map((item) => {
-                const isActive = pathname === item.href || (item.href !== "/" && pathname?.startsWith(item.href));
-                return (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`block text-lg font-semibold tracking-wide py-2 border-b border-brand-blue-mid/30 ${
-                      isActive ? "text-brand-accent-light" : "text-brand-gray-warm"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              })}
-            </div>
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 top-[60px] z-40 bg-brand-blue-dark/95 backdrop-blur-lg border-t border-brand-blue-mid/30 md:hidden flex flex-col justify-between p-6 transition-all duration-200">
+          <div className="space-y-6 py-6">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href || (item.href !== "/" && pathname?.startsWith(item.href));
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`block text-lg font-semibold tracking-wide py-2 border-b border-brand-blue-mid/30 ${
+                    isActive ? "text-brand-accent-light" : "text-brand-gray-warm"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+          </div>
 
-            <div className="pb-12">
-              <Link
-                href="/contact/"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full inline-flex items-center justify-center py-4 text-sm font-bold uppercase tracking-wider text-white bg-brand-accent-mid hover:bg-brand-accent-light rounded-full transition-colors duration-300 group gap-3"
-              >
-                Contact Us
-                <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-accent-mid transition-transform duration-300 group-hover:rotate-45">
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </span>
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <div className="pb-12">
+            <Link
+              href="/contact/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full inline-flex items-center justify-center py-4 text-sm font-bold uppercase tracking-wider text-white bg-brand-accent-mid hover:bg-brand-accent-light rounded-full transition-colors duration-300 group gap-3"
+            >
+              Contact Us
+              <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-accent-mid transition-transform duration-300 group-hover:rotate-45">
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </span>
+            </Link>
+          </div>
+        </div>
+      )}
     </>
   );
 }

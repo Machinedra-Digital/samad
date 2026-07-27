@@ -5,13 +5,13 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-  display: "swap",
+  display: "optional",
 });
 
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-heading",
-  display: "swap",
+  display: "optional",
 });
 
 export const viewport: Viewport = {
