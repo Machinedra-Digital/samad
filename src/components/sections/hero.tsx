@@ -1,58 +1,19 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import HeroVideoBackground from "./hero-video-background";
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
-  const [videoError, setVideoError] = useState(false);
-
-  useEffect(() => {
-    // Only load video on desktop viewports after initial page load to maximize FCP and LCP on mobile & desktop
-    if (typeof window !== "undefined" && window.innerWidth >= 768) {
-      const loadVideo = () => {
-        setShouldLoadVideo(true);
-      };
-      if ("requestIdleCallback" in window) {
-        (window as Window & { requestIdleCallback: (cb: () => void) => void }).requestIdleCallback(loadVideo);
-      } else {
-        setTimeout(loadVideo, 1200);
-      }
-    }
-  }, []);
-
-  useEffect(() => {
-    if (shouldLoadVideo && videoRef.current) {
-      videoRef.current.play().catch((err) => {
-        console.log("Autoplay blocked or video error: ", err);
-        setVideoError(true);
-      });
-    }
-  }, [shouldLoadVideo]);
-
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-brand-blue-dark">
       {/* Dynamic aesthetic background gradient representing B2B industrial & agriculture */}
       <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue-dark via-brand-blue-mid to-brand-accent-dark opacity-90 z-0" />
 
-      {/* Deferred Desktop Background Video */}
-      {shouldLoadVideo && !videoError && (
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          onError={() => setVideoError(true)}
-          className="absolute inset-0 w-full h-full object-cover z-0 opacity-70 transform scale-105 transition-opacity duration-1000"
-        >
-          <source src="/hero_video.mp4" type="video/mp4" />
-        </video>
-      )}
+      {/* Deferred Desktop Background Video (Isolated client component) */}
+      <HeroVideoBackground />
 
       {/* Grid Overlay for readability and premium look */}
       <div className="absolute inset-0 bg-brand-blue-dark/30 z-10" />
@@ -62,20 +23,15 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-brand-accent-mid/20 rounded-full blur-[120px] pointer-events-none z-10" />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-brand-blue-light/10 rounded-full blur-[150px] pointer-events-none z-10" />
 
-      {/* Hero Content */}
+      {/* Hero Content - Instant Paint for LCP Optimization */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 z-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
-          {/* Left Column: Text Content */}
+          {/* Left Column: Text Content (Rendered instantly with full visibility) */}
           <div className="lg:col-span-7 text-left space-y-6 flex flex-col items-start">
 
             {/* Floating Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-blue-mid/60 backdrop-blur-md border border-brand-blue-light/30 shadow-md"
-            >
+            <div className="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-blue-mid/60 backdrop-blur-md border border-brand-blue-light/30 shadow-md">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent-light opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-accent-light"></span>
@@ -83,38 +39,23 @@ export default function Hero() {
               <span className="text-xs font-semibold uppercase tracking-wider text-brand-gray-light">
                 UAE Base • Global Reach to Asia & Africa
               </span>
-            </motion.div>
+            </div>
 
-            {/* Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight font-heading"
-            >
+            {/* Headline - LCP Element (Immediate SSR visibility) */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight font-heading">
               Empowering Global Agriculture with High-Performance{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent-light to-brand-accent-mid block lg:inline">
                 Urea N46%
               </span>
-            </motion.h1>
+            </h1>
 
             {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base sm:text-lg text-brand-gray-warm max-w-2xl leading-relaxed font-sans"
-            >
+            <p className="text-base sm:text-lg text-brand-gray-warm max-w-2xl leading-relaxed font-sans">
               Arabian Samad is a premier fertilizer trading and logistics partner based in the UAE. We distribute prilled and granular Urea N46% in custom packaging configurations to support robust food production systems globally.
-            </motion.p>
+            </p>
 
             {/* Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
-            >
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <Link
                 href="/contact/"
                 className="w-full sm:w-auto inline-flex items-center justify-between pl-6 pr-3 py-3.5 text-sm font-bold uppercase tracking-wider text-white bg-brand-accent-mid hover:bg-brand-accent-light rounded-full shadow-lg hover:shadow-brand-accent-mid/20 transition-all duration-300 group gap-4"
@@ -130,15 +71,10 @@ export default function Hero() {
               >
                 Specifications
               </Link>
-            </motion.div>
+            </div>
 
             {/* Micro Stats Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex items-center gap-6 mt-4 p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-lg w-full sm:w-auto"
-            >
+            <div className="flex items-center gap-6 mt-4 p-4 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-lg w-full sm:w-auto">
               <div>
                 <div className="text-2xl font-extrabold text-brand-accent-light font-heading">SGS Certified</div>
                 <div className="text-xs text-brand-gray-warm">100% Quality Inspected Cargo</div>
@@ -148,7 +84,7 @@ export default function Hero() {
                 <div className="text-2xl font-extrabold text-brand-accent-light font-heading">GCC Sourced</div>
                 <div className="text-xs text-brand-gray-warm">Standard ISO Compliance</div>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Right Column: Visual Collages / Cards Grid */}
@@ -158,12 +94,7 @@ export default function Hero() {
 
             {/* Overlapping Bento/Collage Cards */}
             {/* Card 1: Granular Urea Info Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 50, y: -20 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute top-4 left-4 sm:left-10 w-[240px] p-6 rounded-2xl bg-brand-blue-dark/75 backdrop-blur-md border border-brand-blue-light/35 shadow-xl space-y-4 hover:-translate-y-1 transition-transform duration-300 group z-10"
-            >
+            <div className="absolute top-4 left-4 sm:left-10 w-[240px] p-6 rounded-2xl bg-brand-blue-dark/75 backdrop-blur-md border border-brand-blue-light/35 shadow-xl space-y-4 hover:-translate-y-1 transition-transform duration-300 group z-10">
               <div className="flex justify-between items-start">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-brand-accent-light bg-brand-accent-mid/10 px-2 py-0.5 rounded border border-brand-accent-mid/20">
                   Granular Grade
@@ -180,15 +111,10 @@ export default function Hero() {
                 <span>Particle: 2.00 - 4.75mm</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
-            </motion.div>
+            </div>
 
             {/* Card 2: Prilled Urea Info Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 50, y: 50 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute bottom-4 right-4 sm:right-10 w-[240px] p-6 rounded-2xl bg-brand-blue-mid/45 backdrop-blur-md border border-brand-blue-light/20 shadow-xl space-y-4 hover:-translate-y-1 transition-transform duration-300 group z-20"
-            >
+            <div className="absolute bottom-4 right-4 sm:right-10 w-[240px] p-6 rounded-2xl bg-brand-blue-mid/45 backdrop-blur-md border border-brand-blue-light/20 shadow-xl space-y-4 hover:-translate-y-1 transition-transform duration-300 group z-20">
               <div className="flex justify-between items-start">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-brand-accent-light bg-brand-accent-mid/10 px-2 py-0.5 rounded border border-brand-accent-mid/20">
                   Prilled Grade
@@ -205,7 +131,7 @@ export default function Hero() {
                 <span>Particle: 1.00 - 2.80mm</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
-            </motion.div>
+            </div>
           </div>
 
         </div>

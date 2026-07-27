@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
@@ -13,6 +13,12 @@ const outfit = Outfit({
   variable: "--font-heading",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#0b2545",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://arabiansamad.com"),
