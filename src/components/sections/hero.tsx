@@ -7,40 +7,51 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
-    if (videoRef.current) {
+    // Only load video on desktop viewports after initial page load to maximize FCP and LCP on mobile & desktop
+    if (typeof window !== "undefined" && window.innerWidth >= 768) {
+      const loadVideo = () => {
+        setShouldLoadVideo(true);
+      };
+      if ("requestIdleCallback" in window) {
+        (window as Window & { requestIdleCallback: (cb: () => void) => void }).requestIdleCallback(loadVideo);
+      } else {
+        setTimeout(loadVideo, 1200);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (shouldLoadVideo && videoRef.current) {
       videoRef.current.play().catch((err) => {
         console.log("Autoplay blocked or video error: ", err);
         setVideoError(true);
       });
     }
-  }, []);
+  }, [shouldLoadVideo]);
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-brand-blue-dark">
-      {/* Background Media */}
-      {!videoError ? (
+      {/* Dynamic aesthetic background gradient representing B2B industrial & agriculture */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue-dark via-brand-blue-mid to-brand-accent-dark opacity-90 z-0" />
+
+      {/* Deferred Desktop Background Video */}
+      {shouldLoadVideo && !videoError && (
         <video
           ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
+          preload="none"
           onError={() => setVideoError(true)}
-          className="absolute inset-0 w-full h-full object-cover z-0 opacity-80 transform scale-105"
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-70 transform scale-105 transition-opacity duration-1000"
         >
-          {/* Using the local hero video asset */}
-          <source
-            src="/hero_video.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
+          <source src="/hero_video.mp4" type="video/mp4" />
         </video>
-      ) : (
-        /* Dynamic aesthetic fallback gradient representing B2B industrial & agriculture */
-        <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue-dark via-brand-blue-mid to-brand-accent-dark opacity-80 z-0" />
       )}
 
       {/* Grid Overlay for readability and premium look */}
