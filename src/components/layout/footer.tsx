@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { Leaf, Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,12 +14,16 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-2 group">
-              <div className="bg-brand-accent-mid p-2 rounded-lg flex items-center justify-center">
-                <Leaf className="w-5 h-5 text-white" />
-              </div>
+            <Link href="/" className="flex items-center space-x-3 group">
+              <Image
+                src="/logo-colored.png"
+                alt="Arabian Samad Logo"
+                width={180}
+                height={48}
+                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
               <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-wider text-white uppercase">
+                <span className="text-xl font-bold tracking-wider text-white uppercase font-heading">
                   Arabian Samad
                 </span>
                 <span className="text-[10px] uppercase tracking-widest text-brand-accent-light font-medium -mt-1">

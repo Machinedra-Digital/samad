@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   title: "Arabian Samad | Fertilizer & Urea Distribution UAE",
   description: "Arabian Samad is a premier fertilizer distribution company based in UAE, targeting B2B agriculture markets in Asia and Africa with high-quality Urea N46% (Prilled and Granular).",
   keywords: ["Urea", "N46%", "Fertilizer", "Prilled", "Granular", "Prilled Urea", "Granular Urea", "Arabian Samad", "UAE Fertilizer"],
+  icons: {
+    icon: "/logo-colored.png",
+    shortcut: "/logo-colored.png",
+    apple: "/logo-colored.png",
+  },
   openGraph: {
     title: "Arabian Samad | Fertilizer & Urea Distribution UAE",
     description: "Premier B2B fertilizer distribution company in UAE providing Urea N46% (Prilled & Granular).",

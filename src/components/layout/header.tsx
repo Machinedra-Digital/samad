@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowUpRight, Leaf } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -43,10 +44,15 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2 group">
-              <div className="bg-brand-accent-mid/10 text-brand-accent-light border border-brand-accent-light/25 p-2 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-brand-accent-mid group-hover:text-white shadow-sm">
-                <Leaf className="w-5 h-5" />
-              </div>
+            <Link href="/" className="flex items-center space-x-3 group">
+              <Image
+                src="/logo-colored.png"
+                alt="Arabian Samad Logo"
+                width={180}
+                height={48}
+                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                priority
+              />
               <div className="flex flex-col">
                 <span className="text-xl font-extrabold tracking-wider text-white uppercase font-heading">
                   Arabian Samad
