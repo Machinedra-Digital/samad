@@ -91,7 +91,11 @@ export default function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-brand-accent-light shrink-0 mt-0.5" />
                 <span className="text-brand-gray-mid">
-                  OFFICE NO. 1114, ADEL MOHAMED ALI JASIM AL MARZOUQ BUILDING, AL QUOZ 1, DUBAI, UNITED ARAB EMIRATES
+                  OFFICE NO. 1114, <br />
+                  ADEL MOHAMED ALI JASIM <br />
+                  AL MARZOUQ BUILDING, <br />
+                  AL QUOZ 1, DUBAI, <br />
+                  UNITED ARAB EMIRATES
                 </span>
               </li>
               <li className="flex items-center space-x-3">

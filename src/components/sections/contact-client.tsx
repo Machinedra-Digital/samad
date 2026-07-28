@@ -205,7 +205,11 @@ export default function ContactClient() {
                     <div>
                       <h4 className="font-bold text-brand-blue-dark">Address</h4>
                       <p className="text-xs text-brand-gray-mid">
-                        OFFICE NO. 1114, ADEL MOHAMED ALI JASIM AL MARZOUQ BUILDING, AL QUOZ 1, DUBAI, UNITED ARAB EMIRATES
+                        OFFICE NO. 1114, <br />
+                        ADEL MOHAMED ALI JASIM <br />
+                        AL MARZOUQ BUILDING, <br />
+                        AL QUOZ 1, DUBAI, <br />
+                        UNITED ARAB EMIRATES
                       </p>
                     </div>
                   </div>
