@@ -76,12 +76,12 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     className={`text-sm font-semibold tracking-wide transition-colors duration-200 relative py-1 font-heading ${
-                      isActive ? "text-sky-400 font-bold" : "text-slate-200 hover:text-white"
+                      isActive ? "text-brand-accent-light font-bold" : "text-slate-200 hover:text-white"
                     }`}
                   >
                     {item.name}
                     {isActive && (
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-sky-400 rounded-full transition-all duration-300" />
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-accent-light rounded-full transition-all duration-300" />
                     )}
                   </Link>
                 );
@@ -126,7 +126,7 @@ export default function Header() {
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block text-lg font-semibold tracking-wide py-2 border-b border-brand-blue-mid/30 ${
-                    isActive ? "text-sky-400 font-bold" : "text-slate-200"
+                    isActive ? "text-brand-accent-light font-bold" : "text-slate-200"
                   }`}
                 >
                   {item.name}
