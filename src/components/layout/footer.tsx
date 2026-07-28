@@ -113,10 +113,10 @@ export default function Footer() {
             &copy; {currentYear} Arabian Samad. All rights reserved. Registered under UAE commercial laws.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy-policy" className="hover:text-brand-accent-light transition-colors">
+            <Link href="/privacy-policy/" className="hover:text-brand-accent-light transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-brand-accent-light transition-colors">
+            <Link href="/terms/" className="hover:text-brand-accent-light transition-colors">
               Terms of Service
             </Link>
           </div>
