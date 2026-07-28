@@ -4,32 +4,27 @@ import React, { useRef, useEffect, useState } from "react";
 
 export default function HeroVideoBackground() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
-    // Only load video on desktop viewports after initial page load to maximize mobile FCP & LCP
-    if (typeof window !== "undefined" && window.innerWidth >= 768) {
-      const loadVideo = () => {
-        setShouldLoadVideo(true);
-      };
-      if ("requestIdleCallback" in window) {
-        (window as Window & { requestIdleCallback: (cb: () => void) => void }).requestIdleCallback(loadVideo);
-      } else {
-        setTimeout(loadVideo, 1500);
+    // Attempt playback once mounted across all screen sizes
+    if (videoRef.current) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setVideoLoaded(true);
+          })
+          .catch(() => {
+            // Autoplay was prevented (e.g. low power mode or data saver)
+            // Keep background gradient fallback active
+          });
       }
     }
   }, []);
 
-  useEffect(() => {
-    if (shouldLoadVideo && videoRef.current) {
-      videoRef.current.play().catch(() => {
-        setVideoError(true);
-      });
-    }
-  }, [shouldLoadVideo]);
-
-  if (!shouldLoadVideo || videoError) {
+  if (videoError) {
     return null;
   }
 
@@ -40,9 +35,13 @@ export default function HeroVideoBackground() {
       muted
       loop
       playsInline
-      preload="none"
+      preload="metadata"
+      onLoadedData={() => setVideoLoaded(true)}
+      onCanPlay={() => setVideoLoaded(true)}
       onError={() => setVideoError(true)}
-      className="absolute inset-0 w-full h-full object-cover z-0 opacity-70 transform scale-105 transition-opacity duration-1000"
+      className={`absolute inset-0 w-full h-full object-cover z-0 transform scale-105 transition-opacity duration-1000 ${
+        videoLoaded ? "opacity-70" : "opacity-0"
+      }`}
     >
       <source src="/hero_video.mp4" type="video/mp4" />
     </video>

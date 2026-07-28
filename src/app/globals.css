@@ -9,9 +9,9 @@
   --brand-blue-mid: #0284c7;  /* Nitrogen Azure Blue */
   --brand-blue-light: #38bdf8; /* Highlight Sky Blue */
   
-  /* Map legacy green accents to new Azure Blue palette */
-  --brand-accent-dark: #075985; /* sky-800 */
-  --brand-accent-mid: #0284c7;  /* sky-600 */
+  /* Brand Accent Colors (Azure & Sky Blue - High Contrast WCAG compliant) */
+  --brand-accent-dark: #0369a1;  /* sky-700 */
+  --brand-accent-mid: #0284c7;   /* sky-600 */
   --brand-accent-light: #38bdf8; /* sky-400 */
   
   --brand-gray-dark: #334155;

@@ -262,8 +262,8 @@ export default function Home() {
                 className="w-full sm:w-auto inline-flex items-center justify-between pl-8 pr-4 py-4 text-xs font-bold uppercase tracking-wider text-white bg-brand-accent-mid hover:bg-brand-accent-light rounded-full shadow-md transition-all duration-300 group gap-4"
               >
                 <span>Contact Us</span>
-                <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-accent-mid transition-all duration-300 group-hover:rotate-45">
-                  <ArrowRight className="w-3.5 h-3.5 text-brand-accent-mid" />
+                <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-sky-600 transition-all duration-300 group-hover:rotate-45">
+                  <ArrowRight className="w-3.5 h-3.5 text-sky-600" />
                 </span>
               </Link>
               <Link

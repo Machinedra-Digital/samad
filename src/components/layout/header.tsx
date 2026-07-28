@@ -30,6 +30,9 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const normalizePath = (p?: string) => (p || "").replace(/\/+$/, "") || "/";
+  const currentPath = normalizePath(pathname);
+
   return (
     <>
       <header
@@ -50,14 +53,14 @@ export default function Header() {
                 alt="Arabian Samad Logo"
                 width={180}
                 height={48}
-                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
                 priority
               />
               <div className="flex flex-col">
                 <span className="text-xl font-extrabold tracking-wider text-white uppercase font-heading">
                   Arabian Samad
                 </span>
-                <span className="text-[10px] uppercase tracking-widest text-brand-accent-light font-semibold -mt-1">
+                <span className="text-[10px] uppercase tracking-widest text-slate-300 font-semibold -mt-1">
                   Fertilizers & Logistics
                 </span>
               </div>
@@ -66,18 +69,19 @@ export default function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => {
-                const isActive = pathname === item.href || (item.href !== "/" && pathname?.startsWith(item.href));
+                const itemPath = normalizePath(item.href);
+                const isActive = currentPath === itemPath || (itemPath !== "/" && currentPath.startsWith(itemPath));
                 return (
                   <Link
                     key={item.name}
                     href={item.href}
                     className={`text-sm font-semibold tracking-wide transition-colors duration-200 relative py-1 font-heading ${
-                      isActive ? "text-brand-accent-light" : "text-brand-gray-warm hover:text-white"
+                      isActive ? "text-sky-400 font-bold" : "text-slate-200 hover:text-white"
                     }`}
                   >
                     {item.name}
                     {isActive && (
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-accent-light rounded-full transition-all duration-300" />
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-sky-400 rounded-full transition-all duration-300" />
                     )}
                   </Link>
                 );
@@ -114,14 +118,15 @@ export default function Header() {
         <div className="fixed inset-0 top-[60px] z-40 bg-brand-blue-dark/95 backdrop-blur-lg border-t border-brand-blue-mid/30 md:hidden flex flex-col justify-between p-6 transition-all duration-200">
           <div className="space-y-6 py-6">
             {navItems.map((item) => {
-              const isActive = pathname === item.href || (item.href !== "/" && pathname?.startsWith(item.href));
+              const itemPath = normalizePath(item.href);
+              const isActive = currentPath === itemPath || (itemPath !== "/" && currentPath.startsWith(itemPath));
               return (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block text-lg font-semibold tracking-wide py-2 border-b border-brand-blue-mid/30 ${
-                    isActive ? "text-brand-accent-light" : "text-brand-gray-warm"
+                    isActive ? "text-sky-400 font-bold" : "text-slate-200"
                   }`}
                 >
                   {item.name}

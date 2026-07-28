@@ -74,33 +74,33 @@ export default function ProductCatalogClient() {
                     onClick={() => selectProduct(prod.id)}
                     className={`w-full text-left p-6 rounded-xl border transition-all duration-300 flex items-center justify-between group ${
                       isSelected
-                        ? "bg-brand-blue-dark border-brand-blue-light/30 text-white shadow-lg shadow-brand-blue-dark/10"
-                        : "bg-white border-brand-gray-warm hover:border-brand-blue-light/20 text-brand-blue-dark hover:shadow-md"
+                        ? "bg-brand-blue-dark border-2 border-brand-blue-mid text-white shadow-xl ring-2 ring-brand-blue-mid/20"
+                        : "bg-slate-100/80 border-slate-200 text-slate-700 hover:bg-white hover:border-slate-300 hover:text-slate-900"
                     }`}
                   >
                     <div className="space-y-1">
                       <div className="flex items-center space-x-2">
-                        <Layers className={`w-4 h-4 ${isSelected ? "text-brand-accent-light" : "text-brand-accent-mid"}`} />
+                        <Layers className={`w-4 h-4 ${isSelected ? "text-sky-400" : "text-sky-600"}`} />
                         <span className="font-bold tracking-wide">{prod.name}</span>
                       </div>
-                      <span className={`text-xs block ${isSelected ? "text-brand-gray-mid" : "text-brand-gray-mid"}`}>
+                      <span className={`text-xs block ${isSelected ? "text-slate-300" : "text-slate-500"}`}>
                         {prod.category} ({prod.state})
                       </span>
                     </div>
                     <ChevronRight className={`w-5 h-5 transition-transform duration-300 ${
-                      isSelected ? "text-brand-accent-light translate-x-1" : "text-brand-gray-mid group-hover:translate-x-1"
+                      isSelected ? "text-sky-400 translate-x-1" : "text-slate-400 group-hover:translate-x-1"
                     }`} />
                   </button>
                 );
               })}
 
               {/* Technical Overview Info box */}
-              <div className="bg-brand-blue-mid/5 rounded-xl border border-brand-blue-mid/10 p-6 space-y-4">
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-blue-mid flex items-center">
-                  <FileText className="w-4 h-4 mr-1.5" />
+              <div className="bg-sky-50 rounded-xl border border-sky-200 p-6 space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-sky-800 flex items-center">
+                  <FileText className="w-4 h-4 mr-1.5 text-sky-600" />
                   Standard Specs Guarantee
                 </h4>
-                <p className="text-xs text-brand-gray-dark leading-relaxed">
+                <p className="text-xs text-slate-700 leading-relaxed font-medium">
                   Our chemical supplies are sourced from ISO-certified production lines in the GCC. All urea deliveries come with SGS/Bureau Veritas certification reports certifying nitrogen and biuret compliance.
                 </p>
               </div>
@@ -128,31 +128,31 @@ export default function ProductCatalogClient() {
                   <div className="overflow-x-auto">
                     <table className="w-full text-left text-sm">
                       <thead>
-                        <tr className="bg-brand-gray-light text-brand-blue-mid uppercase text-[10px] tracking-widest font-semibold border-b border-brand-gray-warm">
+                        <tr className="bg-slate-100 text-sky-800 uppercase text-[10px] tracking-widest font-bold border-b border-slate-200">
                           <th className="py-3 px-4">Parameter</th>
                           <th className="py-3 px-4">Guaranteed Value</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-brand-gray-warm">
+                      <tbody className="divide-y divide-slate-200">
                         <tr>
-                          <td className="py-3 px-4 font-medium text-brand-gray-dark">Nitrogen Content</td>
-                          <td className="py-3 px-4 text-brand-blue-dark font-bold">{activeProduct.specifications.nitrogen}</td>
+                          <td className="py-3 px-4 font-medium text-slate-700">Nitrogen Content</td>
+                          <td className="py-3 px-4 text-slate-900 font-bold">{activeProduct.specifications.nitrogen}</td>
                         </tr>
                         <tr>
-                          <td className="py-3 px-4 font-medium text-brand-gray-dark">Biuret Content</td>
-                          <td className="py-3 px-4 text-brand-blue-dark font-bold">{activeProduct.specifications.biuret}</td>
+                          <td className="py-3 px-4 font-medium text-slate-700">Biuret Content</td>
+                          <td className="py-3 px-4 text-slate-900 font-bold">{activeProduct.specifications.biuret}</td>
                         </tr>
                         <tr>
-                          <td className="py-3 px-4 font-medium text-brand-gray-dark">Moisture Content</td>
-                          <td className="py-3 px-4 text-brand-blue-dark font-bold">{activeProduct.specifications.moisture}</td>
+                          <td className="py-3 px-4 font-medium text-slate-700">Moisture Content</td>
+                          <td className="py-3 px-4 text-slate-900 font-bold">{activeProduct.specifications.moisture}</td>
                         </tr>
                         <tr>
-                          <td className="py-3 px-4 font-medium text-brand-gray-dark">Granulometry Size Range</td>
-                          <td className="py-3 px-4 text-brand-blue-dark font-bold">{activeProduct.specifications.granulometry}</td>
+                          <td className="py-3 px-4 font-medium text-slate-700">Granulometry Size Range</td>
+                          <td className="py-3 px-4 text-slate-900 font-bold">{activeProduct.specifications.granulometry}</td>
                         </tr>
                         <tr>
-                          <td className="py-3 px-4 font-medium text-brand-gray-dark">Physical Appearance Color</td>
-                          <td className="py-3 px-4 text-brand-blue-dark font-bold">{activeProduct.specifications.color}</td>
+                          <td className="py-3 px-4 font-medium text-slate-700">Physical Appearance Color</td>
+                          <td className="py-3 px-4 text-slate-900 font-bold">{activeProduct.specifications.color}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -179,10 +179,10 @@ export default function ProductCatalogClient() {
                       <button
                         key={pack}
                         onClick={() => setSelectedPack(pack)}
-                        className={`px-4 py-2.5 rounded-lg border text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center space-x-2 ${
+                        className={`px-4 py-2.5 rounded-lg border text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center space-x-2 ${
                           isSelected
-                            ? "bg-brand-accent-mid border-brand-accent-mid text-white shadow-md shadow-brand-accent-mid/20"
-                            : "bg-brand-gray-light border-brand-gray-warm hover:border-brand-gray-warm text-brand-gray-dark hover:bg-brand-gray-warm/40"
+                            ? "bg-sky-600 border-sky-600 text-white shadow-md shadow-sky-600/20"
+                            : "bg-slate-100 border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-200/70"
                         }`}
                       >
                         <Box className="w-3.5 h-3.5" />
@@ -200,21 +200,21 @@ export default function ProductCatalogClient() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="p-6 rounded-xl bg-brand-blue-dark/5 border border-brand-blue-mid/10 space-y-4"
+                    className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-4"
                   >
                     <div className="flex items-center space-x-3 text-brand-blue-dark">
-                      <ShoppingBag className="w-5 h-5 text-brand-accent-mid" />
-                      <h4 className="font-bold tracking-wide">
+                      <ShoppingBag className="w-5 h-5 text-sky-600" />
+                      <h4 className="font-bold tracking-wide text-slate-900">
                         {packagingDetails[selectedPack]?.title || selectedPack}
                       </h4>
                     </div>
-                    <p className="text-sm text-brand-gray-dark leading-relaxed">
+                    <p className="text-sm text-slate-700 leading-relaxed">
                       {packagingDetails[selectedPack]?.desc}
                     </p>
-                    <div className="flex items-start space-x-2.5 bg-brand-accent-mid/5 border border-brand-accent-mid/15 p-4 rounded-lg">
-                      <Truck className="w-4 h-4 text-brand-accent-mid shrink-0 mt-0.5" />
-                      <p className="text-xs text-brand-accent-dark leading-relaxed">
-                        <strong>B2B Logistics Tip:</strong> {packagingDetails[selectedPack]?.tip}
+                    <div className="flex items-start space-x-2.5 bg-sky-50 border border-sky-200 p-4 rounded-lg">
+                      <Truck className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
+                      <p className="text-xs text-slate-800 leading-relaxed">
+                        <strong className="text-sky-900">B2B Logistics Tip:</strong> {packagingDetails[selectedPack]?.tip}
                       </p>
                     </div>
                   </motion.div>
