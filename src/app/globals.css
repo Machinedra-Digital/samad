@@ -4,15 +4,15 @@
   --background: #f8fafc;
   --foreground: #0f172a;
   
-  /* Brand colors */
-  --brand-blue-dark: #0b2545; /* Industrial Navy Blue */
-  --brand-blue-mid: #0284c7;  /* Nitrogen Azure Blue */
-  --brand-blue-light: #38bdf8; /* Highlight Sky Blue */
+  /* Brand colors (Base: #0F2D5C) */
+  --brand-blue-dark: #0F2D5C; /* Deep Base Theme Blue */
+  --brand-blue-mid: #1B498A;  /* Mid Theme Blue */
+  --brand-blue-light: #3A7BD5; /* Light Theme Blue */
   
-  /* Map legacy green accents to new Azure Blue palette */
-  --brand-accent-dark: #075985; /* sky-800 */
-  --brand-accent-mid: #0284c7;  /* sky-600 */
-  --brand-accent-light: #38bdf8; /* sky-400 */
+  /* Brand Accent Colors (High-contrast blue shades derived from #0F2D5C) */
+  --brand-accent-dark: #163B75;  /* Deep Accent Blue */
+  --brand-accent-mid: #2563EB;   /* Vibrant Primary Accent Blue */
+  --brand-accent-light: #60A5FA; /* Highlight Sky Blue Accent */
   
   --brand-gray-dark: #334155;
   --brand-gray-mid: #64748b;

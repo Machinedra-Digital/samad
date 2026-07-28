@@ -78,11 +78,11 @@ export default function ContactClient() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
             {/* Left Column: Form */}
-            <div className="lg:col-span-7 bg-white rounded-2xl border border-brand-gray-warm shadow-md p-6 sm:p-8">
+            <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200 shadow-md p-6 sm:p-8">
               <div className="space-y-2 mb-8">
                 {/* H2 Heading 1 */}
-                <h2 className="text-2xl font-extrabold text-brand-blue-dark">B2B RFQ & Inquiry Desk</h2>
-                <p className="text-xs text-brand-gray-mid">
+                <h2 className="text-2xl font-extrabold text-slate-900">B2B RFQ & Inquiry Desk</h2>
+                <p className="text-xs text-slate-600">
                   Submit your details and inquiry parameters below to receive a formal quotation from our sales team.
                 </p>
               </div>
@@ -91,16 +91,16 @@ export default function ContactClient() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="p-8 rounded-xl bg-brand-accent-mid/10 border border-brand-accent-mid/20 text-center space-y-4"
+                  className="p-8 rounded-xl bg-sky-50 border border-sky-200 text-center space-y-4"
                 >
-                  <CheckCircle2 className="w-12 h-12 text-brand-accent-mid mx-auto" />
-                  <h3 className="text-lg font-bold text-brand-blue-dark">Quote Request Submitted</h3>
-                  <p className="text-sm text-brand-gray-dark max-w-md mx-auto leading-relaxed">
+                  <CheckCircle2 className="w-12 h-12 text-sky-600 mx-auto" />
+                  <h3 className="text-lg font-bold text-slate-900">Quote Request Submitted</h3>
+                  <p className="text-sm text-slate-700 max-w-md mx-auto leading-relaxed">
                     Thank you for contacting Arabian Samad. Your B2B inquiry has been successfully routed to our trading desk. A procurement specialist will email you a corporate soft offer within 24 business hours.
                   </p>
                   <button
                     onClick={() => setStatus("idle")}
-                    className="px-5 py-2.5 rounded-lg bg-brand-accent-mid hover:bg-brand-accent-light text-white text-xs font-semibold uppercase tracking-wider transition-colors duration-200"
+                    className="px-5 py-2.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold uppercase tracking-wider transition-colors duration-200"
                   >
                     Submit Another Inquiry
                   </button>
@@ -113,8 +113,8 @@ export default function ContactClient() {
                     </div>
                   )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="space-y-1 text-left">
-                      <label className="text-xs font-bold text-brand-blue-dark uppercase tracking-wider block">
+                    <div className="space-y-1.5 text-left">
+                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider block">
                         Your Name *
                       </label>
                       <input
@@ -123,12 +123,12 @@ export default function ContactClient() {
                         required
                         value={formState.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-brand-gray-warm focus:border-brand-accent-mid focus:outline-none transition-colors duration-200 text-sm text-brand-blue-dark bg-brand-gray-light/35"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 focus:outline-none transition-all duration-200 text-sm text-slate-900 bg-white placeholder:text-slate-400"
                         placeholder="e.g. John Doe"
                       />
                     </div>
-                    <div className="space-y-1 text-left">
-                      <label className="text-xs font-bold text-brand-blue-dark uppercase tracking-wider block">
+                    <div className="space-y-1.5 text-left">
+                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider block">
                         Corporate Email *
                       </label>
                       <input
@@ -137,14 +137,14 @@ export default function ContactClient() {
                         required
                         value={formState.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-brand-gray-warm focus:border-brand-accent-mid focus:outline-none transition-colors duration-200 text-sm text-brand-blue-dark bg-brand-gray-light/35"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 focus:outline-none transition-all duration-200 text-sm text-slate-900 bg-white placeholder:text-slate-400"
                         placeholder="e.g. buyer@company.com"
                       />
                     </div>
                   </div>
 
-                  <div className="space-y-1 text-left">
-                    <label className="text-xs font-bold text-brand-blue-dark uppercase tracking-wider block">
+                  <div className="space-y-1.5 text-left">
+                    <label className="text-xs font-bold text-slate-800 uppercase tracking-wider block">
                       Company Name *
                     </label>
                     <input
@@ -153,13 +153,13 @@ export default function ContactClient() {
                       required
                       value={formState.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-brand-gray-warm focus:border-brand-accent-mid focus:outline-none transition-colors duration-200 text-sm text-brand-blue-dark bg-brand-gray-light/35"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 focus:outline-none transition-all duration-200 text-sm text-slate-900 bg-white placeholder:text-slate-400"
                       placeholder="e.g. AgriTrade Ltd"
                     />
                   </div>
 
-                  <div className="space-y-1 text-left">
-                    <label className="text-xs font-bold text-brand-blue-dark uppercase tracking-wider block">
+                  <div className="space-y-1.5 text-left">
+                    <label className="text-xs font-bold text-slate-800 uppercase tracking-wider block">
                       Detailed Message / Technical Needs *
                     </label>
                     <textarea
@@ -168,7 +168,7 @@ export default function ContactClient() {
                       rows={5}
                       value={formState.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-brand-gray-warm focus:border-brand-accent-mid focus:outline-none transition-colors duration-200 text-sm text-brand-blue-dark bg-brand-gray-light/35 resize-none"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 focus:outline-none transition-all duration-200 text-sm text-slate-900 bg-white placeholder:text-slate-400 resize-none"
                       placeholder="Please detail requested packaging configs, granular/prilled split, and target dispatch timeline..."
                     />
                   </div>
@@ -176,7 +176,7 @@ export default function ContactClient() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-xs font-bold uppercase tracking-wider text-white bg-brand-accent-mid hover:bg-brand-accent-light rounded-lg shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-xs font-bold uppercase tracking-wider text-white bg-sky-600 hover:bg-sky-500 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group cursor-pointer"
                   >
                     {loading ? (
                       "Processing Request..."

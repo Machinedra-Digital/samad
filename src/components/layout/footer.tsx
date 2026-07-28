@@ -20,13 +20,13 @@ export default function Footer() {
                 alt="Arabian Samad Logo"
                 width={180}
                 height={48}
-                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-0 invert"
               />
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-wider text-white uppercase font-heading">
                   Arabian Samad
                 </span>
-                <span className="text-[10px] uppercase tracking-widest text-brand-accent-light font-medium -mt-1">
+                <span className="text-[10px] uppercase tracking-widest text-slate-300 font-medium -mt-1">
                   Fertilizers & Logistics
                 </span>
               </div>
@@ -113,10 +113,10 @@ export default function Footer() {
             &copy; {currentYear} Arabian Samad. All rights reserved. Registered under UAE commercial laws.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy-policy" className="hover:text-brand-accent-light transition-colors">
+            <Link href="/privacy-policy/" className="hover:text-brand-accent-light transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-brand-accent-light transition-colors">
+            <Link href="/terms/" className="hover:text-brand-accent-light transition-colors">
               Terms of Service
             </Link>
           </div>

@@ -15,14 +15,14 @@ export default function Home() {
   return (
     <>
       <Header />
-      
+
       <main id="main-content" className="font-sans bg-brand-gray-light">
         <Hero />
-        
+
         {/* Intro Section - UAE Base & Logistics */}
         <section className="py-24 bg-white border-b border-brand-gray-warm/40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+
             {/* Section Header */}
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
               <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent-mid bg-brand-accent-mid/10 px-3.5 py-1.5 rounded-full border border-brand-accent-mid/20">
@@ -38,7 +38,7 @@ export default function Home() {
 
             {/* Bento Grid Layout */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
-              
+
               {/* Card 1: Maritime Clearing (Large Stat) */}
               <div className="lg:col-span-4 p-8 rounded-3xl bg-brand-gray-light border border-brand-gray-warm/60 hover:shadow-xl hover:border-brand-accent-mid/25 transition-all duration-300 flex flex-col justify-between group">
                 <div className="space-y-4">
@@ -135,7 +135,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              
+
               {/* Granular Box */}
               <div className="bg-white p-8 rounded-3xl border border-brand-gray-warm/60 shadow-md hover:shadow-xl hover:border-brand-accent-mid/20 transition-all duration-300 space-y-6 text-left flex flex-col justify-between group">
                 <div className="space-y-4">
@@ -248,7 +248,7 @@ export default function Home() {
         <section className="bg-brand-blue-dark text-white py-20 md:py-28 relative overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#0e3054_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10" />
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-accent-mid/10 rounded-full blur-[150px] pointer-events-none" />
-          
+
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl font-heading">
               Source High-Grade Urea N46% Directly
@@ -262,13 +262,13 @@ export default function Home() {
                 className="w-full sm:w-auto inline-flex items-center justify-between pl-8 pr-4 py-4 text-xs font-bold uppercase tracking-wider text-white bg-brand-accent-mid hover:bg-brand-accent-light rounded-full shadow-md transition-all duration-300 group gap-4"
               >
                 <span>Contact Us</span>
-                <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-accent-mid transition-all duration-300 group-hover:rotate-45">
-                  <ArrowRight className="w-3.5 h-3.5 text-brand-accent-mid" />
+                <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center text-sky-600 transition-all duration-300 group-hover:rotate-45">
+                  <ArrowRight className="w-3.5 h-3.5 text-sky-600" />
                 </span>
               </Link>
               <Link
                 href="/products/"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-xs font-bold uppercase tracking-wider text-brand-gray-light hover:text-white border border-brand-blue-light/35 bg-brand-blue-mid/20 hover:bg-brand-blue-mid/40 rounded-full transition-all duration-300"
+                className="w-full h-14 sm:w-auto inline-flex items-center justify-center px-8 py-4 text-xs font-bold uppercase tracking-wider text-brand-gray-light hover:text-white border border-brand-blue-light/35 bg-brand-blue-mid/20 hover:bg-brand-blue-mid/40 rounded-full transition-all duration-300"
               >
                 Technical Spec Sheet
               </Link>
@@ -277,7 +277,7 @@ export default function Home() {
         </section>
 
       </main>
-      
+
       <Footer />
       {/* SEO Trigger: <title> title= name="description" property="og: og: Head> </title> */}
     </>
