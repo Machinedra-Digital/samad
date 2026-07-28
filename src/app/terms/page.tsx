@@ -132,8 +132,13 @@ export default function TermsOfServicePage() {
                 </p>
                 <div className="text-sm text-brand-gray-dark space-y-1 pt-2">
                   <p className="font-semibold text-brand-blue-dark">Arabian Samad</p>
-                  <p>Office No. 1114, Adel Mohamed Ali Jasim Al Marzouq Building, Al Quoz 1</p>
-                  <p>Dubai, United Arab Emirates</p>
+                  <p>
+                    OFFICE NO. 1114, <br />
+                    ADEL MOHAMED ALI JASIM <br />
+                    AL MARZOUQ BUILDING, <br />
+                    AL QUOZ 1, DUBAI, <br />
+                    UNITED ARAB EMIRATES
+                  </p>
                   <p>
                     Email:{" "}
                     <a href="mailto:info@arabiansamad.com" className="text-brand-accent-mid hover:underline font-medium">
